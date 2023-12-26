@@ -1,0 +1,84 @@
+.messages {
+  height: 90vh;
+  overflow-y: scroll;
+}
+
+.messages div{
+  transition:all .2s ease;
+}
+
+.messageL {
+  text-align: left;
+}
+
+.messageR {
+  text-align: right;
+  margin-bottom:10px;
+}
+
+.bubbleL { 
+  display: inline-block;
+  margin-bottom: 20px;
+  padding:10px;
+  background: #4D2;
+  color: #FFF;
+  font:normal 14pt sans-serif;
+  max-width: 50%;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.bubbleL:after{
+  display: block;
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 15px;
+  left:-10px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: transparent;
+  border-right: 10px solid #4D2;
+}
+
+.bubbleR { 
+  display: inline-block;
+  margin: 10px;
+  padding:10px;
+  background: #29F;
+  color: #FFF;
+  font:normal 14pt sans-serif;
+  max-width: 50%;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.bubbleR:after{
+  display: block;
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 15px;
+  right:-10px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: transparent;
+  border-left: 10px solid #29F;
+}
+ 
+.drafter {
+  bottom: 0px;
+  padding: 10px;
+  height: 10%;
+  background: rgba(255,255,255,.8);
+}
+
+#Rsend, #Rtext {
+  float: right;
+}
