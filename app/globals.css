@@ -16,12 +16,30 @@
   }
 }
 
-body {
+/* body {
   padding: 0 15vh;
+} */
+
+#header {
+  padding-bottom: 1em;
 }
 
+@media (max-width: 767px) {
+  .image-container {
+    display: none;
+  }
+}
+
+#contacts {
+  padding-top: 5em;
+}
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+::selection {
+  color: rgb(0, 229, 255);
+  background: rgb(17, 255, 0);
 }

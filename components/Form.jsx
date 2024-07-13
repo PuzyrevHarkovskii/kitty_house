@@ -117,7 +117,7 @@ const Form = () => {
         scale: scaleProgress,
       }}
     >
-      <Box id="contactus">
+      <Box id="form">
         <Box
           shadow={"md"}
           rounded="70"
@@ -171,6 +171,7 @@ const Form = () => {
                   }}
                   color="gray.900"
                   lineHeight="shorter"
+                  fontFamily={"Work Sans"}
                 >
                   заявку
                 </chakra.p>
