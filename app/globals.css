@@ -16,12 +16,13 @@
   }
 }
 
-/* body {
+body {
   padding: 0 15vh;
-} */
+}
 
 #header {
   padding-bottom: 1em;
+  padding-top: 0.5em;
 }
 
 @media (max-width: 767px) {

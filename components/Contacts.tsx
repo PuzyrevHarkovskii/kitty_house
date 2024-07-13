@@ -25,7 +25,7 @@ const ContactBox: React.FC<ContactBoxProps> = ({ color, icon: Icon, text }) => {
     >
       <Flex justify={"center"}>
         <Stack align={"center"}>
-          {Icon && <Icon size="40" />}
+          {Icon && <Icon size="50" />}
           <Text fontSize={"xl"} pt={3} ml={2}>
             {text}
           </Text>
@@ -45,11 +45,16 @@ const Contacts = () => {
             height={"75"}
             alt="Контактный кот_1"
             src={cat_1}
+            style={{
+              transform: "rotate(-30deg)",
+              marginBottom: "4em",
+              marginRight: "1em",
+            }}
           />
 
           <Box>
-            <Heading fontSize={"7xl"}>We are open</Heading>
-            <Heading fontFamily={"Work Sans"} fontSize={"6xl"} as="i">
+            <Heading fontSize={"8xl"}>We are open</Heading>
+            <Heading fontFamily={"Work Sans"} fontSize={"8xl"} as="i">
               to talking
             </Heading>
           </Box>
@@ -59,6 +64,11 @@ const Contacts = () => {
             height={"75"}
             alt="Контактный кот_1"
             src={cat_2}
+            style={{
+              transform: "rotate(15deg)",
+              marginTop: "4em",
+              marginLeft: "2em",
+            }}
           />
         </HStack>
         <Stack
