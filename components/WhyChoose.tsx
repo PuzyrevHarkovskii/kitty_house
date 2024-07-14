@@ -32,7 +32,7 @@ const WhyChoose = () => {
           Artistry?
         </Heading>
         <Text py={10}>
-          Our students are chosen to study in our children's school
+          Our students are chosen to study in our childrens school
           <Text> because of the high quality of education</Text>
         </Text>
         <Stack
