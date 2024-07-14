@@ -126,7 +126,6 @@ const Form = () => {
             <Box p={10} order={{ base: 1, md: 2 }}>
               <div className="pb-8">
                 <chakra.p
-                  className="bouncing-button"
                   fontSize={{
                     base: "5xl",
                     md: "6xl",

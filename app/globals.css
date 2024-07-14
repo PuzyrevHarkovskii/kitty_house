@@ -16,13 +16,13 @@
   }
 }
 
-/* body {
+body {
   padding: 0 20vh;
-} */
+}
 
 #header {
-  padding-bottom: 1em;
-  padding-top: 0.5em;
+  padding-bottom: 2em;
+  padding-top: 2em;
 }
 
 #contacts {
@@ -59,3 +59,16 @@
   color: rgb(0, 229, 255);
   background: rgb(17, 255, 0);
 }
+
+/* *,
+*:before,
+*:after {
+  position: relative;
+  animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+}
+
+*:before,
+*:after {
+  content: "";
+  display: block;
+} */

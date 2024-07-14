@@ -5,18 +5,24 @@ import Contacts from "@/components/Contacts";
 import FAQ from "@/components/FAQ";
 import Features from "@/components/Features";
 import WhyChoose from "@/components/WhyChoose";
+import Title from "@/components/Title";
+import Footer from "@/components/Footer";
+import Cat from "@/components/cat/Cat";
 
 export default function Home() {
   return (
     <>
       <ChakraProvider>
+        {/* <Cat /> */}
         <Header />
+
+        <Title />
+        <Features />
         <WhyChoose />
         <Form />
-        <Contacts />
         <FAQ />
-
-        {/* <Features /> */}
+        <Contacts />
+        <Footer />
       </ChakraProvider>
     </>
   );
