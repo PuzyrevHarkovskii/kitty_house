@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --color-custom-green: #2bd886;
+  --color-custom-purple: #ccbdf4;
+  --color-custom-salad: #dbf9b8;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,24 +16,39 @@
   }
 }
 
-body {
-  padding: 0 15vh;
-}
+/* body {
+  padding: 0 20vh;
+} */
 
 #header {
   padding-bottom: 1em;
   padding-top: 0.5em;
 }
 
+#contacts {
+  padding-top: 5em;
+}
+
+#why {
+  padding-top: 5em;
+}
+
+#features {
+  padding-top: 5em;
+}
+
+/* #FAQ {
+} */
+
 @media (max-width: 767px) {
   .image-container {
     display: none;
   }
+  body {
+    padding: 0 2vh;
+  }
 }
 
-#contacts {
-  padding-top: 5em;
-}
 @layer utilities {
   .text-balance {
     text-wrap: balance;

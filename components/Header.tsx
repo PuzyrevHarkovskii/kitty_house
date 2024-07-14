@@ -71,9 +71,9 @@ export default function Header() {
           direction={"row"}
           spacing={6}
         >
-          {/* <Button
+          <Button
             as={"a"}
-            fontSize={"xl"}
+            fontSize={"md"}
             fontWeight={400}
             variant={"link"}
             href={"#"}
@@ -82,7 +82,7 @@ export default function Header() {
             borderRadius={"full"}
           >
             Оставить заявку
-          </Button> */}
+          </Button>
         </Stack>
       </Flex>
 

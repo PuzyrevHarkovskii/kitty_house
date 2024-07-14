@@ -32,25 +32,6 @@ import Pattern1 from "@/public/images/forms_pattern_1.png";
 import Pattern2 from "@/public/images/forms_pattern_2.png";
 import Photo from "@/public/images/formscat.png";
 
-const Feature = (props) => (
-  <Flex alignItems="center" color={null}>
-    <Icon
-      boxSize={4}
-      mr={1}
-      color="green.600"
-      viewBox="0 0 20 20"
-      fill="currentColor"
-    >
-      <path
-        fillRule="evenodd"
-        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-        clipRule="evenodd"
-      ></path>
-    </Icon>
-    {props.children}
-  </Flex>
-);
-
 const Form = () => {
   const { hasCopied, onCopy } = useClipboard("example@example.com");
   const [formData, setFormData] = useState({
@@ -121,7 +102,7 @@ const Form = () => {
         <Box
           shadow={"md"}
           rounded="70"
-          bgColor={"#CCBDF4"}
+          bgColor={"var(--color-custom-purple)"}
           textAlign={"center"}
           py={10}
         >

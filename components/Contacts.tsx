@@ -79,13 +79,17 @@ const Contacts = () => {
           direction={{ base: "column", md: "row" }}
         >
           <ContactBox
-            color="#2BD886"
+            color="var(--color-custom-green)"
             icon={BiMessageRounded}
             text="Contact us"
           />
-          <ContactBox color="#CCBDF4" icon={AiOutlinePhone} text="Call us" />
           <ContactBox
-            color="#DBF9B8"
+            color="var(--color-custom-purple)"
+            icon={AiOutlinePhone}
+            text="Call us"
+          />
+          <ContactBox
+            color="var(--color-custom-salad)"
             icon={BiMessageRounded}
             text="Video call"
           />
