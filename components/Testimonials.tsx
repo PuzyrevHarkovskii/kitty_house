@@ -73,7 +73,7 @@ function TestimonialCard(props: TestimonialCardProps) {
       maxW={"640px"}
       direction={{ base: "column-reverse", md: "row" }}
       width={"full"}
-      rounded={"35px"}
+      rounded={"45px"}
       p={10}
       justifyContent={"space-between"}
       position={"relative"}

@@ -26,7 +26,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
   };
 
   return (
-    <div className="w-full h-screen rounded-[35px] grid grid-cols-1 md:grid-cols-3  mx-auto gap-4 relative">
+    <div className="w-full h-screen rounded-[45px] grid grid-cols-1 md:grid-cols-3  mx-auto gap-4 relative">
       {cards.map((card, i) => (
         <div key={i} className={cn(card.className, "")}>
           <motion.div
@@ -35,10 +35,10 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
               card.className,
               "relative overflow-hidden",
               selected?.id === card.id
-                ? "rounded-[35px] cursor-pointer absolute inset-0 h-1/2 w-full md:w-1/2 m-auto z-50 flex justify-center items-center flex-wrap flex-col"
+                ? "rounded-[45px] cursor-pointer absolute inset-0 h-1/2 w-full md:w-1/2 m-auto z-50 flex justify-center items-center flex-wrap flex-col"
                 : lastSelected?.id === card.id
-                ? "z-40 bg-white rounded-[35px] h-full w-full"
-                : "bg-white rounded-[35px] h-full w-full"
+                ? "z-40 bg-white rounded-[45px] h-full w-full"
+                : "bg-white rounded-[45px] h-full w-full"
             )}
             layout
           >
