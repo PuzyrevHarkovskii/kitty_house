@@ -8,6 +8,7 @@ import WhyChoose from "@/components/WhyChoose";
 import Title from "@/components/Title";
 import Footer from "@/components/Footer";
 import Cat from "@/components/cat/Cat";
+import { GridPhotos } from "@/components/Carousel";
 
 export default function Home() {
   return (
@@ -15,12 +16,12 @@ export default function Home() {
       <ChakraProvider>
         {/* <Cat /> */}
         <Header />
-
         <Title />
         <Features />
         <WhyChoose />
         <Form />
         <FAQ />
+        <GridPhotos />
         <Contacts />
         <Footer />
       </ChakraProvider>

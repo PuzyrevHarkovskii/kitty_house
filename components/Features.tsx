@@ -27,6 +27,7 @@ const Features = () => {
             />
           </Box>
         </Box>
+
         <Box
           className=" hover:translate-x-2 hover:scale-105 transition-all duration-300"
           minH={500}

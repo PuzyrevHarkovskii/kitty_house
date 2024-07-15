@@ -18,9 +18,25 @@ const Title = () => {
               alt="Контактный кот_1"
               src={Title_logo}
             />
-            <Heading fontSize={"9xl"}>Creative</Heading>
+            <Heading
+              fontSize={{
+                base: "6xl",
+                md: "7xl",
+                lg: "9xl",
+              }}
+            >
+              Creative
+            </Heading>
           </HStack>
-          <Heading fontSize={"9xl"} as={"i"} fontFamily={"Work Sans"}>
+          <Heading
+            fontSize={{
+              base: "6xl",
+              md: "7xl",
+              lg: "9xl",
+            }}
+            as={"i"}
+            fontFamily={"Work Sans"}
+          >
             Kids Academy
           </Heading>
         </Box>

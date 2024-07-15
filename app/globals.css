@@ -25,20 +25,13 @@ body {
   padding-top: 2em;
 }
 
-#contacts {
-  padding-top: 5em;
+#contacts,
+#why,
+#features,
+#FAQ,
+#carousel {
+  padding: 3em 0;
 }
-
-#why {
-  padding-top: 5em;
-}
-
-#features {
-  padding-top: 5em;
-}
-
-/* #FAQ {
-} */
 
 @media (max-width: 767px) {
   .image-container {

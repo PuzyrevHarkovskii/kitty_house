@@ -13,17 +13,17 @@ export function GridPhotos() {
   const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
   return (
-    <motion.div
-      ref={ref}
-      style={{
-        scale: scaleProgress,
-        opacity: opacityProgress,
-      }}
-    >
-      <div className="h-screen  width-[20vw] w-screen  sm:px-2">
-        <LayoutGrid cards={cards} />
-      </div>
-    </motion.div>
+    // <motion.div
+    //   ref={ref}
+    //   style={{
+    //     scale: scaleProgress,
+    //     opacity: opacityProgress,
+    //   }}
+    // >
+    <div id="carousel" className="">
+      <LayoutGrid cards={cards} />
+    </div>
+    // </motion.div>
   );
 }
 
@@ -78,24 +78,24 @@ const cards = [
     id: 1,
     content: <SkeletonOne />,
     className: "md:col-span-2",
-    thumbnail: "/images/kids/6.webp",
+    thumbnail: "/images/отель1.jpeg",
   },
   {
     id: 2,
     content: <SkeletonTwo />,
     className: "col-span-1",
-    thumbnail: "/images/kids/5.webp",
+    thumbnail: "/images/отель2.jpeg",
   },
   {
     id: 3,
     content: <SkeletonThree />,
     className: "col-span-1",
-    thumbnail: "/images/kids/4.jpeg",
+    thumbnail: "/images/отель3.jpeg",
   },
   {
     id: 4,
     content: <SkeletonFour />,
     className: "md:col-span-2",
-    thumbnail: "/images/kids/2.webp",
+    thumbnail: "/images/отель4.jpg",
   },
 ];

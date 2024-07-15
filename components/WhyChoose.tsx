@@ -31,12 +31,13 @@ const WhyChoose = () => {
         <Heading fontSize={"8xl"} as={"i"} fontFamily={"Work Sans"}>
           Artistry?
         </Heading>
-        <Text py={10}>
+        <Text>
           Our students are chosen to study in our childrens school
           <Text> because of the high quality of education</Text>
         </Text>
         <Stack
           spacing={10}
+          pt={5}
           justifyItems={"center"}
           justifyContent={"space-evenly"}
           direction={{ base: "column", md: "row" }}
