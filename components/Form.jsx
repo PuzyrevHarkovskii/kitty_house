@@ -124,7 +124,7 @@ const Form = () => {
             />
           </Box>
           <Box p={10} order={{ base: 1, md: 2 }}>
-            <div className="pb-8">
+            <div className="pb-6">
               <chakra.p
                 fontSize={{
                   base: "5xl",
@@ -144,14 +144,14 @@ const Form = () => {
                   base: "5xl",
                   md: "6xl",
                 }}
-                as="span"
+                as={"i"}
+                fontFamily={"Work Sans"}
                 fontWeight={{
                   base: "bold",
                   md: "extrabold",
                 }}
                 color="gray.900"
                 lineHeight="shorter"
-                fontFamily={"Work Sans"}
               >
                 заявку
               </chakra.p>
@@ -186,12 +186,7 @@ const Form = () => {
                 />
 
                 <InputGroup>
-                  <InputLeftAddon
-                    rounded={"35px"}
-                    mt={3}
-                    size="sm"
-                    h="12" // Установите одинаковую высоту
-                  >
+                  <InputLeftAddon rounded={"35px"} mt={3} size="sm" h="12">
                     +7
                   </InputLeftAddon>
                   <Input

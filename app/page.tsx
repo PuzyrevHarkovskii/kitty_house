@@ -9,6 +9,7 @@ import Title from "@/components/Title";
 import Footer from "@/components/Footer";
 import Cat from "@/components/cat/Cat";
 import { GridPhotos } from "@/components/Carousel";
+import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
   return (
@@ -23,6 +24,8 @@ export default function Home() {
         <FAQ />
         <GridPhotos />
         <Contacts />
+
+        <Testimonials />
         <Footer />
       </ChakraProvider>
     </>

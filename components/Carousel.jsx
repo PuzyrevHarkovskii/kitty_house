@@ -20,7 +20,7 @@ export function GridPhotos() {
     //     opacity: opacityProgress,
     //   }}
     // >
-    <div id="carousel" className="">
+    <div id="carousel">
       <LayoutGrid cards={cards} />
     </div>
     // </motion.div>

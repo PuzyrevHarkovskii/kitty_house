@@ -27,8 +27,24 @@ const WhyChoose = () => {
   return (
     <div id="why">
       <Box textAlign={"center"}>
-        <Heading fontSize={"8xl"}>Why choose</Heading>
-        <Heading fontSize={"8xl"} as={"i"} fontFamily={"Work Sans"}>
+        <Heading
+          fontSize={{
+            base: "5xl",
+            md: "6xl",
+            lg: "8xl",
+          }}
+        >
+          Why choose
+        </Heading>
+        <Heading
+          fontSize={{
+            base: "5xl",
+            md: "6xl",
+            lg: "8xl",
+          }}
+          as={"i"}
+          fontFamily={"Work Sans"}
+        >
           Artistry?
         </Heading>
         <Text>

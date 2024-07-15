@@ -20,6 +20,7 @@ const FAQItem: React.FC<ContactBoxProps> = ({ question, answer }) => {
   return (
     <Accordion py={1} allowMultiple>
       <AccordionItem
+        py={"2"}
         borderRadius={"30px"}
         border={"2px"}
         borderColor={"gray.300"}
@@ -58,8 +59,24 @@ const FAQ = () => {
           direction={{ base: "column", md: "row" }}
         >
           <Box px={10}>
-            <Heading fontSize={"8xl"}>We are</Heading>
-            <Heading fontSize={"8xl"} as={"i"} fontFamily={"Work Sans"}>
+            <Heading
+              fontSize={{
+                base: "5xl",
+                md: "6xl",
+                lg: "8xl",
+              }}
+            >
+              We are
+            </Heading>
+            <Heading
+              fontSize={{
+                base: "5xl",
+                md: "6xl",
+                lg: "8xl",
+              }}
+              as={"i"}
+              fontFamily={"Work Sans"}
+            >
               often asked
             </Heading>
           </Box>

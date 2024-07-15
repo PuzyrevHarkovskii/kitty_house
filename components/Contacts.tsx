@@ -6,6 +6,7 @@ import cat_2 from "@/public/images/contactcat_2.png";
 import { IconType } from "react-icons";
 import { BiMessageRounded } from "react-icons/bi";
 import { AiOutlinePhone } from "react-icons/ai";
+import { motion } from "framer-motion";
 
 interface ContactBoxProps {
   color: string;
@@ -53,8 +54,24 @@ const Contacts = () => {
           />
 
           <Box>
-            <Heading fontSize={"8xl"}>We are open</Heading>
-            <Heading fontFamily={"Work Sans"} fontSize={"8xl"} as="i">
+            <Heading
+              fontSize={{
+                base: "5xl",
+                md: "6xl",
+                lg: "8xl",
+              }}
+            >
+              We are open
+            </Heading>
+            <Heading
+              fontFamily={"Work Sans"}
+              fontSize={{
+                base: "5xl",
+                md: "6xl",
+                lg: "8xl",
+              }}
+              as="i"
+            >
               to talking
             </Heading>
           </Box>
