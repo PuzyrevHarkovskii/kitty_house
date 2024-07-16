@@ -10,7 +10,6 @@ const Features = () => {
     <div id="features">
       <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }} gap={5}>
         <Box
-          className="hover:translate-x-2 hover:scale-105 transition-all duration-300"
           minH={{ base: 50, md: 300 }}
           bgColor={"#2BD886"}
           borderRadius={"40px"}
@@ -38,7 +37,6 @@ const Features = () => {
         </Box>
 
         <Box
-          className="hover:translate-x-2 hover:scale-105 transition-all duration-300"
           minH={{ base: 150, md: 500 }}
           bgColor={"#CCBDF4"}
           borderRadius={"40px"}
@@ -66,7 +64,6 @@ const Features = () => {
           />
         </Box>
         <Box
-          className="hover:translate-x-2 hover:scale-105 transition-all duration-300"
           minH={{ base: 100, md: 400 }}
           bgColor={"#DBF9B8"}
           borderRadius={"40px"}

@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { MinusIcon } from "@chakra-ui/icons";
 import { AddIcon } from "@chakra-ui/icons";
+import { motion } from "framer-motion";
 
 interface ContactBoxProps {
   question: string;
@@ -18,34 +19,41 @@ interface ContactBoxProps {
 
 const FAQItem: React.FC<ContactBoxProps> = ({ question, answer }) => {
   return (
-    <Accordion py={1} allowMultiple>
-      <AccordionItem
-        py={"2"}
-        borderRadius={"30px"}
-        border={"2px"}
-        borderColor={"gray.300"}
-      >
-        {({ isExpanded }) => (
-          <>
-            <h2>
-              <AccordionButton>
-                <Box fontSize={"lg"} as="span" flex="1" textAlign="left">
-                  {question}
-                </Box>
-                {isExpanded ? (
-                  <MinusIcon fontSize="12px" />
-                ) : (
-                  <AddIcon fontSize="12px" />
-                )}
-              </AccordionButton>
-            </h2>
-            <AccordionPanel fontSize={"lg"} pb={4}>
-              {answer}
-            </AccordionPanel>
-          </>
-        )}
-      </AccordionItem>
-    </Accordion>
+    <motion.div
+      className="box"
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.9 }}
+      transition={{ type: "spring", stiffness: 300, damping: 14 }}
+    >
+      <Accordion py={1} allowMultiple>
+        <AccordionItem
+          py={"2"}
+          borderRadius={"30px"}
+          border={"2px"}
+          borderColor={"gray.300"}
+        >
+          {({ isExpanded }) => (
+            <>
+              <h2>
+                <AccordionButton>
+                  <Box fontSize={"lg"} as="span" flex="1" textAlign="left">
+                    {question}
+                  </Box>
+                  {isExpanded ? (
+                    <MinusIcon fontSize="12px" />
+                  ) : (
+                    <AddIcon fontSize="12px" />
+                  )}
+                </AccordionButton>
+              </h2>
+              <AccordionPanel fontSize={"lg"} pb={4}>
+                {answer}
+              </AccordionPanel>
+            </>
+          )}
+        </AccordionItem>
+      </Accordion>
+    </motion.div>
   );
 };
 

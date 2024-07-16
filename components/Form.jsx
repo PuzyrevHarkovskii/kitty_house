@@ -109,7 +109,7 @@ const Form = () => {
         <Stack
           align={"center"}
           justify={"center"}
-          spacing={20}
+          spacing="0"
           direction={{ base: "column", md: "row" }}
         >
           <Box order={{ base: 2, md: 1 }}>

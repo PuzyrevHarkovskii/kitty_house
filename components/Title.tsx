@@ -30,7 +30,7 @@ const Title = () => {
           </HStack>
           <Heading
             fontSize={{
-              base: "6xl",
+              base: "5xl",
               md: "7xl",
               lg: "9xl",
             }}

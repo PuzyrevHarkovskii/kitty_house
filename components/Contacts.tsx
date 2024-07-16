@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Heading, Text, Box, Stack, HStack, Flex } from "@chakra-ui/react";
 import Image from "next/image";
@@ -16,23 +17,30 @@ interface ContactBoxProps {
 
 const ContactBox: React.FC<ContactBoxProps> = ({ color, icon: Icon, text }) => {
   return (
-    <Box
-      w={80}
-      h={180}
-      alignContent={"center"}
-      bg={color}
-      p={4}
-      borderRadius={"70px"}
+    <motion.div
+      className="box"
+      whileHover={{ scale: 1.2 }}
+      whileTap={{ scale: 0.9 }}
+      transition={{ type: "spring", stiffness: 400, damping: 17 }}
     >
-      <Flex justify={"center"}>
-        <Stack align={"center"}>
-          {Icon && <Icon size="50" />}
-          <Text fontSize={"xl"} pt={3} ml={2}>
-            {text}
-          </Text>
-        </Stack>
-      </Flex>
-    </Box>
+      <Box
+        w={80}
+        h={180}
+        alignContent={"center"}
+        bg={color}
+        p={4}
+        borderRadius={"70px"}
+      >
+        <Flex justify={"center"}>
+          <Stack align={"center"}>
+            {Icon && <Icon size="50" />}
+            <Text fontSize={"xl"} pt={3} ml={2}>
+              {text}
+            </Text>
+          </Stack>
+        </Flex>
+      </Box>
+    </motion.div>
   );
 };
 
