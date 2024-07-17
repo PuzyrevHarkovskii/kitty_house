@@ -10,6 +10,7 @@ const Features = () => {
     <div id="features">
       <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }} gap={5}>
         <Box
+          className="gradient-box"
           minH={{ base: 50, md: 300 }}
           bgColor={"#2BD886"}
           borderRadius={"40px"}

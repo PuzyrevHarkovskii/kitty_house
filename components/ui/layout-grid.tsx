@@ -26,10 +26,13 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
   };
 
   return (
-    <div className="w-full h-screen rounded-[45px] grid grid-cols-1 md:grid-cols-3  mx-auto gap-4 relative">
+    <div className="w-full h-screen rounded-[45px] grid grid-cols-1 md:grid-cols-3  mx-auto gap-6 relative">
       {cards.map((card, i) => (
         <div key={i} className={cn(card.className, "")}>
           <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.8 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
             onClick={() => handleClick(card)}
             className={cn(
               card.className,
