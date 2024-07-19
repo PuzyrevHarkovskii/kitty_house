@@ -35,7 +35,11 @@ const FAQItem: React.FC<ContactBoxProps> = ({ question, answer }) => {
           {({ isExpanded }) => (
             <>
               <h2>
-                <AccordionButton>
+                <AccordionButton
+                  _hover={{
+                    borderRadius: "30px",
+                  }}
+                >
                   <Box fontSize={"lg"} as="span" flex="1" textAlign="left">
                     {question}
                   </Box>

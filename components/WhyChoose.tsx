@@ -45,7 +45,7 @@ const WhyChoose = () => {
           as={"i"}
           fontFamily={"Work Sans"}
         >
-          Artistry?
+          Kitty House?
         </Heading>
         <Text>
           Our students are chosen to study in our childrens school
@@ -59,19 +59,19 @@ const WhyChoose = () => {
           direction={{ base: "column", md: "row" }}
         >
           <Feature
-            title="Хороший план"
+            title="Комфортные условия"
             text="We believe that learning should contribute to the full development of each child."
             icon_src={Pattern1}
           />
           <Box mt={{ base: 0, md: 24 }}>
             <Feature
-              title="Настоящий балаган"
+              title="Постоянный уход"
               text="We believe that learning should contribute to the full development of each child."
               icon_src={Pattern1}
             />
           </Box>
           <Feature
-            title="Тихонько свалил"
+            title="Просторные боксы"
             text="We believe that learning should contribute to the full development of each child."
             icon_src={Pattern1}
           />

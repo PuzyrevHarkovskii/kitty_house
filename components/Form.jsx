@@ -171,65 +171,92 @@ const Form = () => {
                   lg: 4,
                 }}
               >
-                <Input
-                  rounded={"35px"}
-                  bg={"#FFFFFF"}
-                  size="lg"
-                  type="text"
-                  textAlign={"center"}
-                  placeholder="Имя"
-                  required
-                  name="name"
-                  id="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                />
-
-                <InputGroup>
-                  <InputLeftAddon rounded={"35px"} mt={3} size="sm" h="12">
-                    +7
-                  </InputLeftAddon>
+                <motion.div
+                  className="box"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.9 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 14 }}
+                >
                   <Input
+                    focusBorderColor="#D9F9B6"
                     rounded={"35px"}
-                    name="contact"
-                    mt={3}
-                    textAlign={"center"}
                     bg={"#FFFFFF"}
                     size="lg"
-                    type="tel"
-                    placeholder="Телефон для связи..."
+                    type="text"
+                    textAlign={"center"}
+                    placeholder="Имя"
                     required
-                    id="contact"
-                    value={formData.contact}
+                    name="name"
+                    id="name"
+                    value={formData.name}
                     onChange={handleChange}
-                    h="12"
                   />
-                </InputGroup>
+                </motion.div>
+                <motion.div
+                  className="box"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.9 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 14 }}
+                >
+                  <InputGroup>
+                    <InputLeftAddon
+                      focusBorderColor="#D9F9B6"
+                      rounded={"35px"}
+                      mt={3}
+                      size="sm"
+                      h="12"
+                    >
+                      +7
+                    </InputLeftAddon>
+                    <Input
+                      focusBorderColor="#D9F9B6"
+                      rounded={"35px"}
+                      name="contact"
+                      mt={3}
+                      textAlign={"center"}
+                      bg={"#FFFFFF"}
+                      size="lg"
+                      type="tel"
+                      placeholder="Телефон для связи..."
+                      required
+                      id="contact"
+                      value={formData.contact}
+                      onChange={handleChange}
+                      h="12"
+                    />
+                  </InputGroup>
+                </motion.div>
               </GridItem>
             </SimpleGrid>
-
-            <Button
-              as={GridItem}
-              variant="solid"
-              colSpan={{
-                base: "auto",
-                lg: 2,
-              }}
-              size="lg"
-              rounded={"full"}
-              type="submit"
-              color={"white"}
-              bg={"black"}
-              cursor="pointer"
-              id="btn"
-              onClick={handleSubmit}
-              value={"Send"}
+            <motion.div
+              className="box"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 300, damping: 14 }}
             >
-              Отправить заявку
-              <Box as="span" ml={2}>
-                <MdOutlineArrowOutward />
-              </Box>
-            </Button>
+              <Button
+                as={GridItem}
+                variant="solid"
+                colSpan={{
+                  base: "auto",
+                  lg: 2,
+                }}
+                size="lg"
+                rounded={"full"}
+                type="submit"
+                color={"white"}
+                bg={"black"}
+                cursor="pointer"
+                id="btn"
+                onClick={handleSubmit}
+                value={"Send"}
+              >
+                Отправить заявку
+                <Box as="span" ml={2}>
+                  <MdOutlineArrowOutward />
+                </Box>
+              </Button>{" "}
+            </motion.div>
           </Box>
         </Stack>
       </Box>
