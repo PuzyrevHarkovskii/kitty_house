@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { Heading, Box, Text, HStack } from "@chakra-ui/react";
 
-import Title_logo from "@/public/images/title_star.png";
+import Title_logo from "@/public/images/Paw.png";
 import Second_image from "@/public/images/second_title.png";
 import Third_pictire from "@/public/images/title_picture.png";
 

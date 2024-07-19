@@ -16,12 +16,15 @@ import {
   useBreakpointValue,
   useDisclosure,
 } from "@chakra-ui/react";
+import Image from "next/image";
 import {
   HamburgerIcon,
   CloseIcon,
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
+
+import Header_picture from "@/public/images/Header_picture.png";
 
 export default function Header() {
   const { isOpen, onToggle } = useDisclosure();
@@ -65,25 +68,7 @@ export default function Header() {
           </Flex>
         </Flex>
 
-        <Stack
-          flex={{ base: 1, md: 0 }}
-          justify={"flex-end"}
-          direction={"row"}
-          spacing={6}
-        >
-          <Button
-            as={"a"}
-            fontSize={"md"}
-            fontWeight={400}
-            variant={"link"}
-            href={"#"}
-            bg={"pink.200"}
-            p={"3"}
-            borderRadius={"full"}
-          >
-            Тут картинку
-          </Button>
-        </Stack>
+        <Image height={70} alt="Картинка хэдера" src={Header_picture} />
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
