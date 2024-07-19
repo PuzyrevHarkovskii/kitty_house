@@ -49,8 +49,8 @@ body {
 }
 
 ::selection {
-  color: rgb(0, 229, 255);
-  background: rgb(17, 255, 0);
+  color: #ffffff;
+  background: #2ad886;
 }
 
 /* *,
