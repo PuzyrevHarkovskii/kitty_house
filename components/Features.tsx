@@ -60,7 +60,7 @@ const Features = () => {
 
           <Image
             alt="Узорчик"
-            src={Pattern2}
+            src={Pattern1}
             className="mr-10 overflow-hidden"
           />
         </Box>

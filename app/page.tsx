@@ -26,6 +26,11 @@ export default function Home() {
         <Contacts />
 
         <Testimonials />
+        <iframe
+          src="https://yandex.ru/map-widget/v1/?um=constructor%3A23d153b5de5d31e7a0627fc829193ae75dcf400fd32e39aa0cbe410023e66479&amp;source=constructor"
+          width="100%"
+          height="344"
+        ></iframe>
         <Footer />
       </ChakraProvider>
     </>

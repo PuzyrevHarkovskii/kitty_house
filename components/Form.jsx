@@ -22,7 +22,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { color, motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 import { useState } from "react";
@@ -52,7 +52,7 @@ const Form = () => {
     e.preventDefault();
 
     const { name, contact } = formData;
-    const telegramBotId = "7258287597:AAFEFe40A4zoCi12cNTdv0qzkIecwhLKEwA";
+    const telegramBotId = "7369782390:AAGhdVtZoEp4cYOsECBqwTXCWBTeeAs29Rs";
     const chatId = 702020795;
     const text = `
     Новая заявка!\nИмя: ${name}\nНомер для связи: +7${contact}`;
