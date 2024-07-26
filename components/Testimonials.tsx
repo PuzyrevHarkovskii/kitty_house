@@ -128,6 +128,7 @@ function TestimonialCard(props: TestimonialCardProps) {
 export default function Testimonials() {
   return (
     <Flex
+      className="testimonials"
       textAlign={"center"}
       justifyContent={"center"}
       direction={"column"}

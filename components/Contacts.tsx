@@ -8,6 +8,8 @@ import { IconType } from "react-icons";
 import { BiMessageRounded } from "react-icons/bi";
 import { AiOutlinePhone } from "react-icons/ai";
 import { motion } from "framer-motion";
+import { FaWhatsapp } from "react-icons/fa";
+import { FaTelegram } from "react-icons/fa";
 
 interface ContactBoxProps {
   color: string;
@@ -18,7 +20,7 @@ interface ContactBoxProps {
 const ContactBox: React.FC<ContactBoxProps> = ({ color, icon: Icon, text }) => {
   return (
     <motion.div
-      className="box"
+      className="contacts box"
       whileHover={{ scale: 1.2 }}
       whileTap={{ scale: 0.9 }}
       transition={{ type: "spring", stiffness: 400, damping: 17 }}
@@ -105,18 +107,18 @@ const Contacts = () => {
         >
           <ContactBox
             color="var(--color-custom-green)"
-            icon={BiMessageRounded}
-            text="Contact us"
+            icon={AiOutlinePhone}
+            text="Телефон"
           />
           <ContactBox
             color="var(--color-custom-purple)"
-            icon={AiOutlinePhone}
-            text="Call us"
+            icon={FaTelegram}
+            text="Telegram"
           />
           <ContactBox
             color="var(--color-custom-salad)"
-            icon={BiMessageRounded}
-            text="Video call"
+            icon={FaWhatsapp}
+            text="Whatsapp"
           />
         </Stack>
       </Box>

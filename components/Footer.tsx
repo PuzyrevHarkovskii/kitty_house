@@ -61,6 +61,8 @@ const SocialButton = ({
 };
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <Box
       bg={useColorModeValue("gray.50", "gray.900")}
@@ -76,7 +78,8 @@ export default function Footer() {
         align={{ base: "center", md: "center" }}
       >
         <Logo />
-        <Text>© 2024 made by app1e.jews ✡</Text>
+        <Text>© {currentYear} made by app1e.jews ✡</Text>{" "}
+        {/* Используем текущий год */}
         <Stack direction={"row"} spacing={6}>
           <SocialButton label={"Twitter"} href={"#"}>
             <FaTwitter />

@@ -98,7 +98,7 @@ const Form = () => {
     //     scale: scaleProgress,
     //   }}
     // >
-    <Box id="form">
+    <Box className="form" id="form">
       <Box
         shadow={"md"}
         rounded="70"
@@ -198,6 +198,78 @@ const Form = () => {
                   whileTap={{ scale: 0.9 }}
                   transition={{ type: "spring", stiffness: 300, damping: 14 }}
                 >
+                  <Input
+                    focusBorderColor="#D9F9B6"
+                    rounded={"35px"}
+                    bg={"#FFFFFF"}
+                    size="lg"
+                    type="text"
+                    textAlign={"center"}
+                    placeholder="Имя котика"
+                    required
+                    // name="name"
+                    // id="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                  />
+                </motion.div>
+                <Stack
+                  style={{ flexWrap: "wrap" }}
+                  direction={{ base: "column", sm: "row" }}
+                >
+                  <motion.div
+                    className="box"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.9 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 14 }}
+                  >
+                    <Text align={"left"}>Дата заезда</Text>
+                    <Input
+                      type="datetime-local"
+                      focusBorderColor="#D9F9B6"
+                      rounded={"35px"}
+                      bg={"#FFFFFF"}
+                      size="lg"
+                      textAlign={"center"}
+                      placeholder="Дата заезда"
+                      required
+                      // name="name"
+                      // id="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                    />
+                  </motion.div>
+                  <motion.div
+                    className="box"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.9 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 14 }}
+                  >
+                    <Text align={"left"} fontSize={{ base: "lg", md: "lg" }}>
+                      Дата выезда
+                    </Text>
+                    <Input
+                      type="datetime-local"
+                      focusBorderColor="#D9F9B6"
+                      rounded={"35px"}
+                      bg={"#FFFFFF"}
+                      size="lg"
+                      textAlign={"center"}
+                      placeholder="Дата выезда"
+                      required
+                      // name="name"
+                      // id="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                    />{" "}
+                  </motion.div>
+                </Stack>
+                <motion.div
+                  className="box"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.9 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 14 }}
+                >
                   <InputGroup>
                     <InputLeftAddon
                       focusBorderColor="#D9F9B6"
@@ -257,6 +329,13 @@ const Form = () => {
                 </Box>
               </Button>{" "}
             </motion.div>
+            {/* <chakra.p fontSize="sm" color="gray.600">
+              Мы заботимся о Ваших персональных данных, подробный текст политики
+              конфиденциальности доступен{" "}
+              <Link onClick={onOpen} color={"pink.500"}>
+                здесь.
+              </Link>
+            </chakra.p> */}
           </Box>
         </Stack>
       </Box>

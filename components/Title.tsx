@@ -8,7 +8,7 @@ import Third_pictire from "@/public/images/title_picture.png";
 
 const Title = () => {
   return (
-    <div>
+    <div className="aboutus">
       <HStack justifyContent={"space-evenly"}>
         <Box>
           <HStack justifyContent={"right"}>
