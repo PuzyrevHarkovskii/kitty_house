@@ -33,6 +33,7 @@ const WhyChoose = () => {
             md: "6xl",
             lg: "8xl",
           }}
+          lineHeight={"0.5"}
         >
           Why choose
         </Heading>

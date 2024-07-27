@@ -19,6 +19,7 @@ const Title = () => {
               src={Title_logo}
             />
             <Heading
+              lineHeight={"0.5"}
               fontSize={{
                 base: "6xl",
                 md: "7xl",

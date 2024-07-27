@@ -72,13 +72,14 @@ const FAQ = () => {
         >
           <Box px={10}>
             <Heading
+              lineHeight={"0.5"}
               fontSize={{
                 base: "5xl",
                 md: "6xl",
                 lg: "8xl",
               }}
             >
-              We are
+              Вопрос —
             </Heading>
             <Heading
               fontSize={{
@@ -89,7 +90,7 @@ const FAQ = () => {
               as={"i"}
               fontFamily={"Work Sans"}
             >
-              often asked
+              Ответ
             </Heading>
           </Box>
 

@@ -65,6 +65,7 @@ const Contacts = () => {
 
           <Box>
             <Heading
+              lineHeight={"0.5"}
               fontSize={{
                 base: "5xl",
                 md: "6xl",

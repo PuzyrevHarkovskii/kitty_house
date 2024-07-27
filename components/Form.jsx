@@ -21,6 +21,15 @@ import {
   InputGroup,
   useToast,
 } from "@chakra-ui/react";
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+} from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
 import { color, motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
@@ -88,7 +97,7 @@ const Form = () => {
     target: ref,
     offset: ["0 1", "1.33 1"],
   });
-  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [1, 1]);
   const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 
   return (
@@ -130,12 +139,12 @@ const Form = () => {
                   base: "5xl",
                   md: "6xl",
                 }}
+                lineHeight="0.5"
                 fontWeight={{
                   base: "bold",
                   md: "extrabold",
                 }}
                 color="gray.900"
-                lineHeight="shorter"
               >
                 Оставьте
               </chakra.p>
@@ -221,9 +230,19 @@ const Form = () => {
                     className="box"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.9 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 14 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 14,
+                    }}
                   >
-                    <Text align={"left"}>Дата заезда</Text>
+                    <Text
+                      align={"left"}
+                      fontWeight={"bold"}
+                      fontSize={{ base: "xl", md: "lg" }}
+                    >
+                      Дата заезда
+                    </Text>
                     <Input
                       type="datetime-local"
                       focusBorderColor="#D9F9B6"
@@ -243,9 +262,17 @@ const Form = () => {
                     className="box"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.9 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 14 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 14,
+                    }}
                   >
-                    <Text align={"left"} fontSize={{ base: "lg", md: "lg" }}>
+                    <Text
+                      align={"left"}
+                      fontWeight={"bold"}
+                      fontSize={{ base: "xl", md: "lg" }}
+                    >
                       Дата выезда
                     </Text>
                     <Input
@@ -329,6 +356,60 @@ const Form = () => {
                 </Box>
               </Button>{" "}
             </motion.div>
+            <chakra.p
+              pt={4}
+              maxWidth={"lg"}
+              fontSize="sm"
+              color="gray.600"
+              lineHeight="base"
+            >
+              Мы заботимся о Ваших персональных данных, подробный текст политики
+              конфиденциальности доступен{" "}
+              <Link onClick={onOpen} color={"pink.500"}>
+                здесь.
+              </Link>
+            </chakra.p>
+            <Modal isOpen={isOpen} onClose={onClose}>
+              <ModalOverlay />
+              <ModalContent rounded={"35px"}>
+                <ModalHeader
+                  bgColor={"#CCBDF4"}
+                  rounded={"full"}
+                  m={"5"}
+                  textAlign={"center"}
+                >
+                  Политика конфиденциальности
+                </ModalHeader>
+                <ModalCloseButton />
+                <ModalBody>
+                  <Box p={5} color="gray.600">
+                    <Heading as="h1" size="lg" mb={4}>
+                      Положение об обработке персональных данных
+                    </Heading>
+                    <Text mb={2}>
+                      Настоящее Положение определяет политику ITEEZY. в
+                      отношении обработки персональных данных и
+                      конфиденциальности, регулирует вопросы обработки
+                      персональных данных и устанавливает процедуры,
+                      направленные на предотвращение и выявление нарушений
+                      законодательства, устранение последствий таких нарушений.
+                    </Text>
+                  </Box>
+                </ModalBody>
+
+                <ModalFooter justify="center">
+                  <Button
+                    bgColor="#DBF9B8"
+                    rounded={"full"}
+                    mr={3}
+                    onClick={onClose}
+                  >
+                    Закрыть
+                  </Button>
+                </ModalFooter>
+              </ModalContent>
+            </Modal>
+
             {/* <chakra.p fontSize="sm" color="gray.600">
               Мы заботимся о Ваших персональных данных, подробный текст политики
               конфиденциальности доступен{" "}
