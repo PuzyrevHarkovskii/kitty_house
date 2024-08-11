@@ -13,27 +13,29 @@ export function GridPhotos() {
   const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
   return (
-    // <motion.div
-    //   ref={ref}
-    //   style={{
-    //     scale: scaleProgress,
-    //     opacity: opacityProgress,
-    //   }}
-    // >
-    <div id="carousel">
-      <LayoutGrid cards={cards} />
-    </div>
-    // </motion.div>
+    <motion.div
+      ref={ref}
+      style={{
+        scale: scaleProgress,
+        opacity: opacityProgress,
+      }}
+    >
+      <div id="carousel">
+        <LayoutGrid cards={cards} />
+      </div>
+    </motion.div>
   );
 }
 
 const SkeletonOne = () => {
   return (
     <div>
-      <p className="font-bold text-4xl text-white">Бла бла!</p>
+      <p className="font-bold text-4xl text-white">Уютный уголок для отдыха</p>
       <p className="font-normal text-base text-white"></p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        У нас есть бла бла бла и бла бла бла
+        В нашем приюте каждая кошка находит свой уголок для сна и отдыха. Мягкие
+        подушки и теплые пледы создают атмосферу уюта, где пушистики могут
+        расслабиться и набраться сил.
       </p>
     </div>
   );
@@ -42,10 +44,12 @@ const SkeletonOne = () => {
 const SkeletonTwo = () => {
   return (
     <div>
-      <p className="font-bold text-4xl text-white">Текст!</p>
+      <p className="font-bold text-4xl text-white">Игровое время!</p>
       <p className="font-normal text-base text-white"></p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        Бла бла бла бла бла бла
+        Время веселья! Наши котики любят играть с яркими игрушками и лазить по
+        игровым комплексам. Каждый день — это новые приключения и забавные
+        моменты!
       </p>
     </div>
   );
@@ -53,10 +57,12 @@ const SkeletonTwo = () => {
 const SkeletonThree = () => {
   return (
     <div>
-      <p className="font-bold text-4xl text-white">Текст</p>
+      <p className="font-bold text-4xl text-white">Забота и внимание</p>
       <p className="font-normal text-base text-white"></p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        Бла бла бла
+        Каждой кошке нужна любовь и внимание. Наши волонтеры проводят время с
+        питомцами, ухаживают за ними и дарят ласку, чтобы они чувствовали себя
+        как дома.
       </p>
     </div>
   );
@@ -64,7 +70,7 @@ const SkeletonThree = () => {
 const SkeletonFour = () => {
   return (
     <div>
-      <p className="font-bold text-4xl text-white">Текст</p>
+      <p className="font-bold text-4xl text-white">Друзья навсегда</p>
       <p className="font-normal text-base text-white"></p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
         Текст

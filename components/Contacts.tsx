@@ -15,9 +15,15 @@ interface ContactBoxProps {
   color: string;
   icon: IconType;
   text: string;
+  href: string;
 }
 
-const ContactBox: React.FC<ContactBoxProps> = ({ color, icon: Icon, text }) => {
+const ContactBox: React.FC<ContactBoxProps> = ({
+  color,
+  icon: Icon,
+  text,
+  href,
+}) => {
   return (
     <motion.div
       className="contacts box"
@@ -25,23 +31,25 @@ const ContactBox: React.FC<ContactBoxProps> = ({ color, icon: Icon, text }) => {
       whileTap={{ scale: 0.9 }}
       transition={{ type: "spring", stiffness: 400, damping: 17 }}
     >
-      <Box
-        w={80}
-        h={180}
-        alignContent={"center"}
-        bg={color}
-        p={4}
-        borderRadius={"70px"}
-      >
-        <Flex justify={"center"}>
-          <Stack align={"center"}>
-            {Icon && <Icon size="50" />}
-            <Text fontSize={"xl"} pt={3} ml={2}>
-              {text}
-            </Text>
-          </Stack>
-        </Flex>
-      </Box>
+      <a href={href} target="_blank" rel="noopener noreferrer">
+        <Box
+          w={80}
+          h={180}
+          alignContent={"center"}
+          bg={color}
+          p={4}
+          borderRadius={"70px"}
+        >
+          <Flex justify={"center"}>
+            <Stack align={"center"}>
+              {Icon && <Icon size="50" />}
+              <Text fontSize={"xl"} pt={3} ml={2}>
+                {text}
+              </Text>
+            </Stack>
+          </Flex>
+        </Box>
+      </a>
     </motion.div>
   );
 };
@@ -110,16 +118,19 @@ const Contacts = () => {
             color="var(--color-custom-green)"
             icon={AiOutlinePhone}
             text="Телефон"
+            href={`tel:+79114030090`}
           />
           <ContactBox
             color="var(--color-custom-purple)"
             icon={FaTelegram}
             text="Telegram"
+            href="https://t.me/zVoidspb"
           />
           <ContactBox
             color="var(--color-custom-salad)"
             icon={FaWhatsapp}
             text="Whatsapp"
+            href="https://wa.me/79114030090"
           />
         </Stack>
       </Box>
