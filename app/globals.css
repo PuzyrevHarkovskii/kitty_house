@@ -64,3 +64,12 @@ body {
   content: "";
   display: block;
 } */
+
+.cls-1 {
+  fill: #fff;
+
+  stroke: #ffbaf3;
+  stroke-miterlimit: 5;
+  stroke-width: 25px;
+  stroke-linecap: round;
+}

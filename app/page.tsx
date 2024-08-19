@@ -1,3 +1,4 @@
+"use client";
 import Header from "@/components/Header";
 import { ChakraProvider } from "@chakra-ui/react";
 import Form from "@/components/Form";
@@ -7,7 +8,6 @@ import Features from "@/components/Features";
 import WhyChoose from "@/components/WhyChoose";
 import Title from "@/components/Title";
 import Footer from "@/components/Footer";
-
 import { GridPhotos } from "@/components/Carousel";
 import Testimonials from "@/components/Testimonials";
 import { NavbarDemo } from "@/components/Navbar";
@@ -20,6 +20,7 @@ export default function Home() {
         <Header />
         <Title />
         <Features />
+
         <WhyChoose />
         <GridPhotos />
         <FAQ />

@@ -1,25 +1,29 @@
 import { Box, Heading, Stack, Text, Flex } from "@chakra-ui/react";
 import React from "react";
-import Image, { StaticImageData } from "next/image";
-
-import Pattern1 from "@/public/images/forms_pattern_1.png";
-import { MdPadding } from "react-icons/md";
+import SVGHouse from "./GSAP elements/House/SVGHouse";
+import SVGHeart from "./GSAP elements/House/SVGHeart";
 
 interface FeatureProps {
   title: string;
   text: string;
-  icon_src: StaticImageData;
+  IconComponent: React.FC; // Обновленный тип
 }
 
-const Feature: React.FC<FeatureProps> = ({ title, text, icon_src }) => {
+const Feature: React.FC<FeatureProps> = ({ title, text, IconComponent }) => {
   return (
-    <>
-      <Flex flexDirection="column" alignItems="center" justifyContent="center">
-        <Image height={100} src={icon_src} alt="Узорчик" />
-        <Heading>{title}</Heading>
-        <Text maxW={40}>{text}</Text>
-      </Flex>
-    </>
+    <Flex flexDirection="column" alignItems="center" justifyContent="center">
+      <Box
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        mb={4}
+        // Отступ снизу, если нужен
+      >
+        <IconComponent /> {/* Пример передачи размера */}
+      </Box>
+      <Heading>{title}</Heading>
+      <Text maxW={40}>{text}</Text>
+    </Flex>
   );
 };
 
@@ -49,7 +53,7 @@ const WhyChoose = () => {
           Kitty House?
         </Heading>
         <Text>
-          Our students are chosen to study in our childrens school
+          Our students are chosen to study in our children's school
           <Text> because of the high quality of education</Text>
         </Text>
         <Stack
@@ -62,19 +66,19 @@ const WhyChoose = () => {
           <Feature
             title="Комфортные условия"
             text="We believe that learning should contribute to the full development of each child."
-            icon_src={Pattern1}
+            IconComponent={SVGHouse} // Передайте компонент анимации
           />
           <Box mt={{ base: 0, md: 24 }}>
             <Feature
               title="Постоянный уход"
               text="We believe that learning should contribute to the full development of each child."
-              icon_src={Pattern1}
+              IconComponent={SVGHeart} // Передайте компонент анимации
             />
           </Box>
           <Feature
             title="Просторные боксы"
             text="We believe that learning should contribute to the full development of each child."
-            icon_src={Pattern1}
+            IconComponent={SVGHouse} // Передайте компонент анимации
           />
         </Stack>
       </Box>

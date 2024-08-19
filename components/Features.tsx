@@ -83,11 +83,11 @@ const Features = () => {
             >
               Writing
             </Heading>
-            <Image
+            {/* <Image
               alt="Узорчик"
               src={Pattern1}
               className="ml-20 overflow-hidden"
-            />
+            /> */}
           </Box>
         </Box>
       </Grid>
