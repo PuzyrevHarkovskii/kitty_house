@@ -76,13 +76,13 @@ const WhyChoose = () => {
         <Feature
           title="Комфортные условия"
           text="We believe that learning should contribute to the full development of each child."
-          IconComponent={SVGPaw}
+          IconComponent={SVGHeart}
         />
         <Box mt={{ base: 0, md: 24 }}>
           <Feature
             title="Постоянный уход"
             text="We believe that learning should contribute to the full development of each child."
-            IconComponent={SVGHeart}
+            IconComponent={SVGPaw}
           />
         </Box>
         <Feature
