@@ -90,8 +90,6 @@ const FAQ = () => {
                 md: "6xl",
                 lg: "8xl",
               }}
-              as={"i"}
-              fontFamily={"Work Sans"}
             >
               Ответ
             </Heading>

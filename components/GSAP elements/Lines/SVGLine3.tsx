@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-export default function SVGLine2() {
+export default function SVGLine3() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -23,7 +23,7 @@ export default function SVGLine2() {
       >
         <motion.path
           className="cls-5"
-          d="M.39,218.5S148.39,35.5,423.39,124.5s512-51,512-51"
+          d="M64.34,322.5S435.34,232.5,247.34,98.5s-348.82-11-167.41,64.5,551.41,190.5,493.41,6.5,380-107,210,55,201,76,179-26"
           initial={{ pathLength: 0 }}
           animate={{ pathLength: isInView ? 1 : 0 }}
           transition={{ duration: 2, ease: "easeInOut" }}
@@ -31,7 +31,7 @@ export default function SVGLine2() {
           stroke="black"
           strokeDasharray="1 1"
           fill="none"
-          opacity={0.5}
+          // opacity={0.5}
         />
       </motion.svg>
     </div>

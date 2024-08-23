@@ -1,15 +1,14 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import { Heading, Text, Box, Stack, HStack, Flex } from "@chakra-ui/react";
 import Image from "next/image";
 import cat_1 from "@/public/images/contactcat_1.png";
 import cat_2 from "@/public/images/contactcat_2.png";
 import { IconType } from "react-icons";
-import { BiMessageRounded } from "react-icons/bi";
 import { AiOutlinePhone } from "react-icons/ai";
-import { motion } from "framer-motion";
-import { FaWhatsapp } from "react-icons/fa";
-import { FaTelegram } from "react-icons/fa";
+import { FaWhatsapp, FaTelegram } from "react-icons/fa";
+import { motion, useInView } from "framer-motion";
+import SVGLine3 from "./GSAP elements/Lines/SVGLine3";
 
 interface ContactBoxProps {
   color: string;
@@ -24,12 +23,23 @@ const ContactBox: React.FC<ContactBoxProps> = ({
   text,
   href,
 }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
     <motion.div
-      className="contacts box"
+      ref={ref}
+      initial={{ opacity: 0, y: 100, scale: 0.8 }}
+      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
       whileHover={{ scale: 1.2 }}
       whileTap={{ scale: 0.9 }}
-      transition={{ type: "spring", stiffness: 400, damping: 17 }}
+      transition={{
+        type: "spring",
+        stiffness: 400,
+        damping: 17,
+        duration: 0.6,
+        ease: "easeOut",
+      }}
     >
       <a href={href} target="_blank" rel="noopener noreferrer">
         <Box
@@ -56,8 +66,22 @@ const ContactBox: React.FC<ContactBoxProps> = ({
 
 const Contacts = () => {
   return (
-    <div>
-      <Box id="contacts" textAlign={"center"}>
+    <Box position="relative" overflow="hidden" w="100%" h="100%">
+      {/* Add the SVGLine3 component as a background */}
+      <Box
+        position="absolute"
+        top={0}
+        left={0}
+        w="100%"
+        h="100%"
+        zIndex={0}
+        opacity={0.3} // Adjust the opacity of the SVG background
+      >
+        <SVGLine3 />
+      </Box>
+
+      {/* Content Section */}
+      <Box id="contacts" textAlign={"center"} position="relative" zIndex={1}>
         <HStack justify={"center"}>
           <Image
             className="image-container"
@@ -80,25 +104,23 @@ const Contacts = () => {
                 lg: "8xl",
               }}
             >
-              We are open
+              Наши
             </Heading>
             <Heading
-              fontFamily={"Work Sans"}
               fontSize={{
                 base: "5xl",
                 md: "6xl",
                 lg: "8xl",
               }}
-              as="i"
             >
-              to talking
+              контакты
             </Heading>
           </Box>
 
           <Image
             className="image-container"
             height={"75"}
-            alt="Контактный кот_1"
+            alt="Контактный кот_2"
             src={cat_2}
             style={{
               transform: "rotate(15deg)",
@@ -107,6 +129,8 @@ const Contacts = () => {
             }}
           />
         </HStack>
+
+        {/* Contact Boxes */}
         <Stack
           py={20}
           align={"center"}
@@ -134,7 +158,7 @@ const Contacts = () => {
           />
         </Stack>
       </Box>
-    </div>
+    </Box>
   );
 };
 

@@ -6,6 +6,7 @@ import Title_logo from "@/public/images/Paw.png";
 import Second_image from "@/public/images/second_title.png";
 import Third_picture from "@/public/images/title_picture.png";
 import SVGLine1 from "./GSAP elements/Lines/SVGLine1";
+import HouseLogo from "@/public/images/Лого для Влада2.svg";
 
 const Title = () => {
   return (
@@ -20,24 +21,22 @@ const Title = () => {
               src={Title_logo}
             />
             <Heading
-              lineHeight={"0.5"}
+              lineHeight={"1"}
               fontSize={{
-                base: "6xl",
-                md: "7xl",
-                lg: "9xl",
+                base: "2xl",
+                md: "3xl",
+                lg: "5xl",
               }}
             >
-              Creative
+              Отель для кошечек
             </Heading>
           </HStack>
           <Heading
             fontSize={{
-              base: "5xl",
+              base: "6xl",
               md: "7xl",
               lg: "9xl",
             }}
-            as={"i"}
-            fontFamily={"Work Sans"}
           >
             Kitty House
           </Heading>
@@ -46,9 +45,9 @@ const Title = () => {
         <Box>
           <Image
             className="image-container"
-            height={"290"}
+            height={"590"}
             alt="Контактный кот_1"
-            src={Second_image}
+            src={HouseLogo}
           />
         </Box>
       </HStack>

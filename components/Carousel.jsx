@@ -1,24 +1,21 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useRef } from "react";
 import { LayoutGrid } from "./ui/layout-grid";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion, useInView, useTransform } from "framer-motion";
 
 export function GridPhotos() {
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["0 1", "1 1"],
-  });
-  const scaleProgress = useTransform(scrollYProgress, [0.5, 1], [0.8, 1]);
-  const opacityProgress = useTransform(scrollYProgress, [0, 1], [1, 1]);
+
+  // Check if the element is in view, and set `once: true` to trigger the animation only once
+  const isInView = useInView(ref, { once: true });
+
   return (
     <motion.div
       ref={ref}
-      style={{
-        scale: scaleProgress,
-        opacity: opacityProgress,
-      }}
+      // Apply the scale only when the element is in view
+      initial={{ scale: 0.6, opacity: 0.6 }}
+      animate={isInView ? { scale: 1, opacity: 1 } : {}}
+      transition={{ duration: 1 }} // Adjust transition duration as needed
     >
       <div id="carousel">
         <LayoutGrid cards={cards} />
@@ -54,6 +51,7 @@ const SkeletonTwo = () => {
     </div>
   );
 };
+
 const SkeletonThree = () => {
   return (
     <div>
@@ -67,6 +65,7 @@ const SkeletonThree = () => {
     </div>
   );
 };
+
 const SkeletonFour = () => {
   return (
     <div>

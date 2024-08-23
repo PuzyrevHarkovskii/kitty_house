@@ -4,6 +4,8 @@ import SVGPaw from "./GSAP elements/House/SVGPaw";
 import SVGHeart from "./GSAP elements/House/SVGHeart";
 import SVGBox from "./GSAP elements/House/SVGBox";
 import SVGLine2 from "./GSAP elements/Lines/SVGLine2";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 interface FeatureProps {
   title: string;
@@ -12,14 +14,24 @@ interface FeatureProps {
 }
 
 const Feature: React.FC<FeatureProps> = ({ title, text, IconComponent }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <Flex flexDirection="column" alignItems="center" justifyContent="center">
-      <Box display="flex" alignItems="center" justifyContent="center" mb={4}>
-        <IconComponent />
-      </Box>
-      <Heading>{title}</Heading>
-      <Text maxW={40}>{text}</Text>
-    </Flex>
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 100, scale: 0.8 }}
+      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+      transition={{ duration: 1, ease: "easeOut" }}
+    >
+      <Flex flexDirection="column" alignItems="center" justifyContent="center">
+        <Box display="flex" alignItems="center" justifyContent="center" mb={4}>
+          <IconComponent />
+        </Box>
+        <Heading>{title}</Heading>
+        <Text maxW={40}>{text}</Text>
+      </Flex>
+    </motion.div>
   );
 };
 
@@ -33,8 +45,7 @@ const WhyChoose = () => {
         left={0}
         right={0}
         bottom={0}
-        zIndex={-1} // Помещаем SVG на фон
-        // Добавляем прозрачность для менее яркого фона
+        zIndex={-1}
       >
         <SVGLine2 />
       </Box>
