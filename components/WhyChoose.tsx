@@ -2,6 +2,7 @@ import { Box, Heading, Stack, Text, Flex } from "@chakra-ui/react";
 import React from "react";
 import SVGHouse from "./GSAP elements/House/SVGHouse";
 import SVGHeart from "./GSAP elements/House/SVGHeart";
+import SVGBox from "./GSAP elements/House/SVGBox";
 
 interface FeatureProps {
   title: string;
@@ -77,8 +78,8 @@ const WhyChoose = () => {
           </Box>
           <Feature
             title="Просторные боксы"
-            text="We believe that learning should contribute to the full development of each child."
-            IconComponent={SVGHouse} // Передайте компонент анимации
+            text="Тут написать про размеры домиков."
+            IconComponent={SVGBox} // Передайте компонент анимации
           />
         </Stack>
       </Box>

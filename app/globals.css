@@ -67,9 +67,13 @@ body {
 
 .cls-1 {
   fill: #fff;
-
   stroke: #ffbaf3;
   stroke-miterlimit: 5;
   stroke-width: 25px;
+  stroke-linecap: round;
+}
+.cls-2 {
+  stroke: #ffbaf3;
+  stroke-width: 20px;
   stroke-linecap: round;
 }

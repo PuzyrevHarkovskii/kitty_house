@@ -4,12 +4,13 @@ import { Heading, Box, Text, HStack } from "@chakra-ui/react";
 
 import Title_logo from "@/public/images/Paw.png";
 import Second_image from "@/public/images/second_title.png";
-import Third_pictire from "@/public/images/title_picture.png";
+import Third_picture from "@/public/images/title_picture.png";
+import SVGLine1 from "./GSAP elements/Lines/SVFLine1";
 
 const Title = () => {
   return (
-    <div className="aboutus">
-      <HStack justifyContent={"space-evenly"}>
+    <div className="aboutus" style={{ position: "relative", zIndex: 1 }}>
+      <HStack justifyContent={"space-evenly"} position="relative" zIndex={2}>
         <Box>
           <HStack justifyContent={"right"}>
             <Image
@@ -38,9 +39,10 @@ const Title = () => {
             as={"i"}
             fontFamily={"Work Sans"}
           >
-            Kids Academy
+            Kitty House
           </Heading>
         </Box>
+
         <Box>
           <Image
             className="image-container"
@@ -50,12 +52,18 @@ const Title = () => {
           />
         </Box>
       </HStack>
-      <HStack pt={5}>
+
+      {/* Контейнер для фона */}
+      <Box position="absolute" top={0} left={0} zIndex={1} width="100%">
+        <SVGLine1 />
+      </Box>
+
+      <HStack pt={5} zIndex={2} position="relative">
         <Image
           className="mr-5"
           height={"100"}
           alt="Контактный кот_1"
-          src={Third_pictire}
+          src={Third_picture}
         />
         <Text maxW={400}>
           Creative Kids Academy provides a nurturing environment where young
