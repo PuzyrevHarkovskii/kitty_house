@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-export default function SVGHouse() {
+export default function SVGPaw() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 

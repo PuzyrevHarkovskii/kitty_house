@@ -1,6 +1,6 @@
 import { Box, Heading, Stack, Text, Flex } from "@chakra-ui/react";
 import React from "react";
-import SVGHouse from "./GSAP elements/House/SVGHouse";
+import SVGPaw from "./GSAP elements/House/SVGPaw";
 import SVGHeart from "./GSAP elements/House/SVGHeart";
 import SVGBox from "./GSAP elements/House/SVGBox";
 
@@ -67,7 +67,7 @@ const WhyChoose = () => {
           <Feature
             title="Комфортные условия"
             text="We believe that learning should contribute to the full development of each child."
-            IconComponent={SVGHouse} // Передайте компонент анимации
+            IconComponent={SVGPaw} // Передайте компонент анимации
           />
           <Box mt={{ base: 0, md: 24 }}>
             <Feature

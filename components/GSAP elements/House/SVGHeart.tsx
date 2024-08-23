@@ -18,12 +18,45 @@ export default function SVGHeart() {
       }}
     >
       <motion.svg
-        viewBox="-150 0 900 450"
+        viewBox="0 0 700 450"
         style={{ width: "100%", height: "100%" }}
       >
         <motion.path
-          className="cls-1"
-          d="M217.41,470.2c57.64-32.23,111.7-70.84,160.87-114.91,7.06-6.33,14.02-12.77,20.45-19.74,13.38-14.52,24.27-31.16,37.43-45.88,11.16-12.49,23.9-23.55,34.23-36.73,22.53-28.73,32.22-67.17,26.01-103.15-6.21-35.98-28.23-68.94-59.1-88.45-12.04-7.61-25.66-13.32-39.89-13.84-16.17-.6-31.82,5.48-46.34,12.6-28.02,13.75-56.14,35.16-61.39,65.93-1.58-31.99-21.43-62.45-50.06-76.81-29.63-14.86-65.36-12.42-96.89-2.22-20.54,6.65-40.8,17.01-53.69,34.34-6.51,8.75-10.88,18.94-13.97,29.4-8.78,29.67-7.42,62.25,3.81,91.08,18.83,48.39,62.19,82.19,93.26,123.79,31.08,41.6,50.06,92.13,54.07,143.9"
+          className="cls-4"
+          d="M211.4,273.54s-61-89,27-128,87.71,75,87.71,75c0,0,15.29-106,100.29-90s83,50,63,96-109,117-109,117c0,0-43,65-44,67s-55-44-66-51-67.18-32.54-79.59-48.77-55.41-72.23-54.41-133.23,47-115,88-122,74,14.67,74,14.67c0,0,36-71.67,39-69.67s12,54,12,54c0,0,22-14,38-14s37,6,41,13,28-31,28-31l9,35s14,4,19,13,11,22,11,22c0,0-3,38-15,44"
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: isInView ? 1 : 0 }}
+          transition={{ duration: 2, ease: "easeInOut" }}
+          strokeWidth={2}
+          stroke="black"
+          strokeDasharray="1 1"
+          fill="none"
+        />
+        <motion.path
+          className="cls-4"
+          d="M359.1,91.12c10.04,4.4,22.3,3.3,31.39-2.82"
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: isInView ? 1 : 0 }}
+          transition={{ duration: 2, ease: "easeInOut" }}
+          strokeWidth={2}
+          stroke="black"
+          strokeDasharray="1 1"
+          fill="none"
+        />
+        <motion.path
+          className="cls-4"
+          d="M439.77,87.62c7.99,6.97,19.66,9.44,29.78,6.31"
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: isInView ? 1 : 0 }}
+          transition={{ duration: 2, ease: "easeInOut" }}
+          strokeWidth={2}
+          stroke="black"
+          strokeDasharray="1 1"
+          fill="none"
+        />
+        <motion.path
+          className="cls-4"
+          d="M397.45,111.15c3.13,.15,6.75,.1,8.73-2.32,.96-1.16,1.34-2.68,1.69-4.15,1.33-5.45,2.65-10.9,3.98-16.35,3.92,8.31,9.1,17.64,18.14,19.29"
           initial={{ pathLength: 0 }}
           animate={{ pathLength: isInView ? 1 : 0 }}
           transition={{ duration: 2, ease: "easeInOut" }}

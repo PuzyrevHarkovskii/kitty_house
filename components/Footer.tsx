@@ -78,7 +78,9 @@ export default function Footer() {
         align={{ base: "center", md: "center" }}
       >
         <Logo />
-        <Text>© {currentYear} made by app1e.jews ✡</Text>{" "}
+        <Text color={"gray.400"}>
+          © {currentYear} made by app1e.jews ✡
+        </Text>{" "}
         {/* Используем текущий год */}
         <Stack direction={"row"} spacing={6}>
           <SocialButton label={"Twitter"} href={"#"}>

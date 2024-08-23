@@ -146,7 +146,7 @@ const Form = () => {
                 }}
                 color="gray.900"
               >
-                Оставьте
+                Закажите
               </chakra.p>
               <chakra.p
                 fontSize={{
@@ -162,7 +162,7 @@ const Form = () => {
                 color="gray.900"
                 lineHeight="shorter"
               >
-                заявку
+                звонок
               </chakra.p>
             </div>
             <SimpleGrid
