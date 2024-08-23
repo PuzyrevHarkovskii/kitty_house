@@ -5,7 +5,7 @@ import { Heading, Box, Text, HStack } from "@chakra-ui/react";
 import Title_logo from "@/public/images/Paw.png";
 import Second_image from "@/public/images/second_title.png";
 import Third_picture from "@/public/images/title_picture.png";
-import SVGLine1 from "./GSAP elements/Lines/SVFLine1";
+import SVGLine1 from "./GSAP elements/Lines/SVGLine1";
 
 const Title = () => {
   return (
@@ -54,7 +54,14 @@ const Title = () => {
       </HStack>
 
       {/* Контейнер для фона */}
-      <Box position="absolute" top={0} left={0} zIndex={1} width="100%">
+      <Box
+        position="absolute"
+        top={0}
+        left={0}
+        zIndex={1}
+        opacity={0.3}
+        width="100%"
+      >
         <SVGLine1 />
       </Box>
 

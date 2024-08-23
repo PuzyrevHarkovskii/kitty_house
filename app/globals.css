@@ -74,7 +74,7 @@ body {
 }
 .cls-2 {
   fill: #fff;
-  stroke: #ffbaf3;
+  stroke: #cbbdf3;
   stroke-miterlimit: 5;
   stroke-width: 25px;
   stroke-linecap: round;
@@ -86,7 +86,13 @@ body {
 }
 
 .cls-4 {
-  stroke: #ffbaf3;
+  stroke: #2ed787;
   stroke-width: 20px;
+  stroke-linecap: round;
+}
+
+.cls-5 {
+  stroke: #f6f99b;
+  stroke-width: 10px;
   stroke-linecap: round;
 }

@@ -11,6 +11,8 @@ import {
 import { MinusIcon } from "@chakra-ui/icons";
 import { AddIcon } from "@chakra-ui/icons";
 import { motion } from "framer-motion";
+import SVGLine1 from "./GSAP elements/Lines/SVGLine1";
+import SVGLine2 from "./GSAP elements/Lines/SVGLine2";
 
 interface ContactBoxProps {
   question: string;
@@ -81,6 +83,7 @@ const FAQ = () => {
             >
               Вопрос —
             </Heading>
+
             <Heading
               fontSize={{
                 base: "5xl",
