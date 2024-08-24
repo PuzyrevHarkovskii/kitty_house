@@ -22,7 +22,7 @@ const Feature: React.FC<FeatureProps> = ({ title, text, IconComponent }) => {
       ref={ref}
       initial={{ opacity: 0, y: 100, scale: 0.8 }}
       animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-      transition={{ duration: 1, ease: "easeOut" }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <Flex flexDirection="column" alignItems="center" justifyContent="center">
         <Box display="flex" alignItems="center" justifyContent="center" mb={4}>

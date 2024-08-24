@@ -153,8 +153,6 @@ const Form = () => {
                   base: "5xl",
                   md: "6xl",
                 }}
-                as={"i"}
-                fontFamily={"Work Sans"}
                 fontWeight={{
                   base: "bold",
                   md: "extrabold",

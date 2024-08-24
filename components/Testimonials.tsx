@@ -9,6 +9,8 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
 // Массив отзывов
 const testimonials = [
@@ -58,18 +60,17 @@ interface TestimonialCardProps {
 const TestimonialCard: React.FC<TestimonialCardProps> = (props) => {
   const { name, color, content, avatar, index } = props;
 
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+
   return (
     <motion.div
+      ref={ref}
       initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{
-        delay: index * 0.3, // Задержка анимации на основе индекса
-        type: "spring",
-        stiffness: 300,
-        damping: 20,
+        delay: index * 0.1, // Задержка анимации на основе индекса
       }}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
     >
       <Flex
         bgColor={color}

@@ -1,11 +1,13 @@
 import React from "react";
 import Image from "next/image";
 import { Heading, Box, Text, HStack } from "@chakra-ui/react";
+import { motion, useAnimation, useInView } from "framer-motion";
 
 import Title_logo from "@/public/images/Paw.png";
 import Second_image from "@/public/images/second_title.png";
 import Third_picture from "@/public/images/title_picture.png";
 import SVGLine1 from "./GSAP elements/Lines/SVGLine1";
+
 import HouseLogo from "@/public/images/Лого для Влада2.svg";
 
 const Title = () => {
@@ -14,12 +16,14 @@ const Title = () => {
       <HStack justifyContent={"space-evenly"} position="relative" zIndex={2}>
         <Box>
           <HStack justifyContent={"right"}>
-            <Image
-              className="mr-5"
-              height={"100"}
-              alt="Контактный кот_1"
-              src={Title_logo}
-            />
+            <motion.div>
+              <Image
+                className="wave mr-5"
+                height={"100"}
+                alt="Контактный кот_1"
+                src={Title_logo}
+              />
+            </motion.div>
             <Heading
               lineHeight={"1"}
               fontSize={{
@@ -32,10 +36,11 @@ const Title = () => {
             </Heading>
           </HStack>
           <Heading
+            lineHeight={"0.8"}
             fontSize={{
               base: "6xl",
-              md: "7xl",
-              lg: "9xl",
+              md: "8xl",
+              lg: "12xl",
             }}
           >
             Kitty House
@@ -43,16 +48,20 @@ const Title = () => {
         </Box>
 
         <Box>
-          <Image
-            className="image-container"
-            height={"590"}
-            alt="Контактный кот_1"
-            src={HouseLogo}
-          />
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ from: 330, duration: 1 }}
+          >
+            <Image
+              className="image-container"
+              height={"590"}
+              alt="Контактный кот_1"
+              src={HouseLogo}
+            />
+          </motion.div>
         </Box>
       </HStack>
 
-      {/* Контейнер для фона */}
       <Box
         position="absolute"
         top={0}
@@ -72,8 +81,9 @@ const Title = () => {
           src={Third_picture}
         />
         <Text maxW={400}>
-          Creative Kids Academy provides a nurturing environment where young
-          minds can flourish and explore their artistic talents
+          Идеальное место для вашего пушистого друга! Наш отель предлагает
+          уютные номера, оборудованные всем необходимым для комфортного
+          проживания.
         </Text>
       </HStack>
     </div>

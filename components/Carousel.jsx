@@ -15,7 +15,7 @@ export function GridPhotos() {
       // Apply the scale only when the element is in view
       initial={{ scale: 0.6, opacity: 0.6 }}
       animate={isInView ? { scale: 1, opacity: 1 } : {}}
-      transition={{ duration: 1 }} // Adjust transition duration as needed
+      transition={{ duration: 0.6 }} // Adjust transition duration as needed
     >
       <div id="carousel">
         <LayoutGrid cards={cards} />

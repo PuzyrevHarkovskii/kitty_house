@@ -9,8 +9,10 @@ import {
   useColorModeValue,
   VisuallyHidden,
 } from "@chakra-ui/react";
+import Image from "next/image";
 import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { ReactNode } from "react";
+import KittyHouseNaming from "@/public/images/KittyHouseBuffNaming.png";
 
 const Logo = (props: any) => {
   return (
@@ -77,7 +79,7 @@ export default function Footer() {
         justify={{ base: "center", md: "space-between" }}
         align={{ base: "center", md: "center" }}
       >
-        <Logo />
+        <Image height={22} alt="КиттиХаус" src={KittyHouseNaming} />
         <Text color={"gray.400"}>
           © {currentYear} made by app1e.jews ✡
         </Text>{" "}
