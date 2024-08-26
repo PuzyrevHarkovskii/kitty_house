@@ -1,59 +1,32 @@
 "use client";
 
-import {
-  Box,
-  Flex,
-  Text,
-  IconButton,
-  Button,
-  Stack,
-  Heading,
-  Collapse,
-  Icon,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  useColorModeValue,
-  useBreakpointValue,
-  useDisclosure,
-} from "@chakra-ui/react";
-import Image from "next/image";
-
-import Header_picture from "@/public/images/Header_picture.png";
-
-import KittyHouseNaming from "@/public/images/KittyHouseBuffNaming.png";
+import { Box, Flex, Heading, useColorModeValue } from "@chakra-ui/react";
 
 export default function Header() {
   return (
     <Box id="header">
       <Flex
-        bg={useColorModeValue("white", "gray.800")}
-        color={useColorModeValue("gray.600", "white")}
+        bg={"white"}
+        color={"gray.600"}
         minH={"60px"}
         py={{ base: 2 }}
         px={{ base: 4 }}
         borderStyle={"solid"}
-        borderColor={useColorModeValue("gray.200", "gray.900")}
+        borderColor={"gray.200"}
         align={"center"}
       >
-        <Flex
-          flex={{ base: 1, md: "auto" }}
-          ml={{ base: -2 }}
-          display={{ base: "flex", md: "none" }}
-        ></Flex>
-        <Heading fontSize={"lg"}>г. Санкт-Петербург</Heading>
+        <div>
+          <Heading fontSize={"lg"} mb={2}>
+            г. Санкт-Петербург
+          </Heading>
+          <Heading fontSize={"lg"}>м. Купчино</Heading>
+        </div>
 
-        <Flex flex={{ base: 1 }} justify={{ base: "center", md: "center" }}>
-          <Flex display={{ base: "none", md: "flex" }} ml={10}></Flex>
-        </Flex>
+        <Flex
+          flex={{ base: 1 }}
+          justify={{ base: "center", md: "center" }}
+        ></Flex>
       </Flex>
     </Box>
   );
-}
-
-interface NavItem {
-  label: string;
-  subLabel?: string;
-  children?: Array<NavItem>;
-  href?: string;
 }

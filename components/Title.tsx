@@ -68,7 +68,13 @@ const Title = () => {
         <SVGLine1 />
       </Box>
 
-      <HStack pt={5} zIndex={2} position="relative">
+      <HStack
+        pt={5}
+        zIndex={2}
+        position="relative"
+        display={"flex"}
+        wrap={"wrap"}
+      >
         <Image
           className="mr-5"
           height={"100"}

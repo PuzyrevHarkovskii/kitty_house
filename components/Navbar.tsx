@@ -36,7 +36,7 @@ function Navbar({ className }: { className?: string }) {
             duration={500}
             offset={-100}
             className={cn(
-              "flex items-center justify-center hover:cursor-pointer text-xs md:text-sm lg:text-lg font-medium relative border-neutral-200 dark:border-white/[0.2] text-black  py-2 rounded-full hover:border-blue-500 hover:text-blue-500 transition duration-300 ease-in-out",
+              "menu-item flex items-center justify-center hover:cursor-pointer text-xs md:text-sm lg:text-lg font-medium relative border-neutral-200 dark:border-white/[0.2] text-black  py-2 rounded-full hover:border-blue-500 hover:text-blue-500 transition duration-300 ease-in-out",
               { "text-blue-500 border-blue-500": active === item.to }
             )}
             onSetActive={() => setActive(item.to)}
