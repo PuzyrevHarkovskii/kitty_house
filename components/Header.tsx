@@ -41,15 +41,11 @@ export default function Header() {
           ml={{ base: -2 }}
           display={{ base: "flex", md: "none" }}
         ></Flex>
-        {/* <Image height={25} alt="КиттиХаус" src={KittyHouseNaming} /> */}
+        <Heading fontSize={"lg"}>г. Санкт-Петербург</Heading>
+
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "center" }}>
           <Flex display={{ base: "none", md: "flex" }} ml={10}></Flex>
         </Flex>
-
-        <Text>
-          {" "}
-          г. Санкт-Петербург, метро Купчино <div>89816995431</div>{" "}
-        </Text>
       </Flex>
     </Box>
   );

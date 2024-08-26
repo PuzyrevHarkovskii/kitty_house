@@ -4,7 +4,7 @@ import { Heading, Box, Text, HStack } from "@chakra-ui/react";
 import { motion, useAnimation, useInView } from "framer-motion";
 
 import Title_logo from "@/public/images/Paw.png";
-import Second_image from "@/public/images/second_title.png";
+
 import Third_picture from "@/public/images/title_picture.png";
 import SVGLine1 from "./GSAP elements/Lines/SVGLine1";
 
@@ -39,8 +39,8 @@ const Title = () => {
             lineHeight={"0.8"}
             fontSize={{
               base: "6xl",
-              md: "8xl",
-              lg: "12xl",
+              md: "9xl",
+              lg: "10xl",
             }}
           >
             Kitty House
@@ -52,12 +52,7 @@ const Title = () => {
             animate={{ rotate: 360 }}
             transition={{ from: 330, duration: 1 }}
           >
-            <Image
-              className="image-container"
-              height={"590"}
-              alt="Контактный кот_1"
-              src={HouseLogo}
-            />
+            <Image height={"500"} alt="Контактный кот_1" src={HouseLogo} />
           </motion.div>
         </Box>
       </HStack>
@@ -81,9 +76,8 @@ const Title = () => {
           src={Third_picture}
         />
         <Text maxW={400}>
-          Идеальное место для вашего пушистого друга! Наш отель предлагает
-          уютные номера, оборудованные всем необходимым для комфортного
-          проживания.
+          Отель для кошечек в Санкт-Петербурге, метро Купчино. Мы там бла бла
+          бла
         </Text>
       </HStack>
     </div>

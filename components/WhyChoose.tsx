@@ -56,21 +56,19 @@ const WhyChoose = () => {
           md: "6xl",
           lg: "8xl",
         }}
-        lineHeight={"0.5"}
       >
-        Why choose
+        Преимущества
       </Heading>
 
       <Heading
+        lineHeight={"2"}
         fontSize={{
           base: "5xl",
           md: "6xl",
           lg: "8xl",
         }}
-        as={"i"}
-        fontFamily={"Work Sans"}
       >
-        Kitty House?
+        Kitty House
       </Heading>
       <Text>
         Our students are chosen to study in our children's school
