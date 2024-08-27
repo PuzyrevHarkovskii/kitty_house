@@ -95,7 +95,7 @@ const WhyChoose = () => {
         </Heading>
       </motion.div>
 
-      <Text>
+      <Text pt={4}>
         Our students are chosen to study in our children's school
         <Text> because of the high quality of education</Text>
       </Text>

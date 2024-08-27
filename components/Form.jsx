@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { MdOutlineArrowOutward } from "react-icons/md";
 import {
@@ -36,8 +36,10 @@ const Form = () => {
     contact: "",
     checkIn: "",
     checkOut: "",
+    petName: "",
   });
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [totalPrice, setTotalPrice] = useState(0); // State to store the total price
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -47,25 +49,39 @@ const Form = () => {
     }));
   };
 
-  const { name, contact, checkIn, checkOut, petName } = formData;
+  // Calculate total price based on checkIn and checkOut dates
+  useEffect(() => {
+    if (formData.checkIn && formData.checkOut) {
+      const checkInDate = new Date(formData.checkIn);
+      const checkOutDate = new Date(formData.checkOut);
+      const timeDifference = checkOutDate - checkInDate;
 
-  // Log the form data to verify the values
-  console.log({ name, contact, checkIn, checkOut, petName });
+      // Calculate the number of days, rounding to the nearest whole day
+      const daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+
+      // Ensure the daysDifference is at least 1 (minimum charge for 1 day)
+      const validDays = daysDifference > 0 ? daysDifference : 1;
+      setTotalPrice(validDays * 500); // Multiply by 500 rubles
+    } else {
+      setTotalPrice(0); // Reset the total price if dates are not valid
+    }
+  }, [formData.checkIn, formData.checkOut]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { name, contact } = formData;
+    const { name, contact, checkIn, checkOut, petName } = formData;
     const telegramBotId = "7369782390:AAGhdVtZoEp4cYOsECBqwTXCWBTeeAs29Rs";
     const chatId = 702020795;
     const text = `
-    Новая заявка!
-    Имя: ${name}
-    Имя котика: ${petName}
-    Дата заезда: ${checkIn}
-    Дата выезда: ${checkOut}
-    Номер для связи: +7${contact}
-  `;
+      Новая заявка!
+      Имя: ${name}
+      Имя котика: ${petName}
+      Дата заезда: ${checkIn}
+      Дата выезда: ${checkOut}
+      Номер для связи: +7${contact}
+      Общая стоимость: ${totalPrice} рублей
+    `;
 
     try {
       const response = await fetch(
@@ -88,8 +104,9 @@ const Form = () => {
         contact: "",
         checkIn: "",
         checkOut: "",
-        petName: "", // Reset petName field
+        petName: "",
       });
+      setTotalPrice(0); // Reset total price after submission
       onOpen(); // Open the modal on successful submission
     } catch (error) {
       console.error("Error:", error);
@@ -310,13 +327,19 @@ const Form = () => {
                 </GridItem>
               </SimpleGrid>
               <Stack spacing={3} align={"center"}>
+                {/* Display the total price */}
+                {totalPrice > 0 && (
+                  <Text fontSize="2xl" fontWeight="bold">
+                    Общая стоимость: {totalPrice} рублей
+                  </Text>
+                )}
                 <Button
                   onClick={handleSubmit}
                   variant={"solid"}
                   size={"lg"}
                   rounded={"35px"}
-                  bgColor={"var(--color-custom-lightpurple)"}
                   color={"white"}
+                  bg={"black"}
                 >
                   Отправить
                 </Button>

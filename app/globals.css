@@ -52,19 +52,6 @@ body {
   background: #ffe9fb;
 }
 
-/* *,
-*:before,
-*:after {
-  position: relative;
-  animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
-}
-
-*:before,
-*:after {
-  content: "";
-  display: block;
-} */
-
 .cls-1 {
   fill: #fff;
   stroke: #ffbaf3;
@@ -94,6 +81,25 @@ body {
 .cls-5 {
   stroke: #f6f99b;
   stroke-width: 10px;
+  stroke-linecap: round;
+}
+.cls-6 {
+  stroke: #feef78;
+  overflow: hidden;
+  stroke-width: 40px;
+  stroke-linecap: round;
+}
+
+.cls-7 {
+  stroke: #daf9b6;
+  stroke-width: 40px;
+  stroke-linecap: round;
+}
+
+.cls-8 {
+  stroke: #cdbef5;
+  overflow: hidden;
+  stroke-width: 40px;
   stroke-linecap: round;
 }
 

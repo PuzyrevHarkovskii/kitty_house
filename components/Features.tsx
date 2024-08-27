@@ -6,6 +6,9 @@ import Pattern2 from "@/public/images/forms_pattern_2.png";
 import Image from "next/image";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import SVGPattern from "./GSAP elements/Features/SVGPattern";
+import SVGPattern2 from "./GSAP elements/Features/SVGPattern2";
+import SVGPattern3 from "./GSAP elements/Features/SVGPattern3";
 
 const Features = () => {
   const ref = useRef(null);
@@ -42,11 +45,7 @@ const Features = () => {
               >
                 Writing
               </Heading>
-              <Image
-                alt="Узорчик"
-                src={Pattern1}
-                className="mr-10 overflow-hidden"
-              />
+              <SVGPattern />
             </Box>
           </Box>
 
@@ -71,11 +70,7 @@ const Features = () => {
               </Heading>
             </Box>
 
-            <Image
-              alt="Узорчик"
-              src={Pattern1}
-              className="mr-10 overflow-hidden"
-            />
+            <SVGPattern2 />
           </Box>
           <Box
             minH={{ base: 100, md: 400 }}
@@ -96,11 +91,7 @@ const Features = () => {
               >
                 Writing
               </Heading>
-              {/* <Image
-              alt="Узорчик"
-              src={Pattern1}
-              className="ml-20 overflow-hidden"
-            /> */}
+              <SVGPattern3 />
             </Box>
           </Box>
         </Grid>
