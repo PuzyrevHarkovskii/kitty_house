@@ -84,7 +84,7 @@ const WhyChoose = () => {
         transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
       >
         <Heading
-          lineHeight={"2"}
+          lineHeight={"1"}
           fontSize={{
             base: "5xl",
             md: "6xl",

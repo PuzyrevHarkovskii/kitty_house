@@ -285,12 +285,17 @@ const Form = () => {
                         rounded={"35px"}
                         mt={3}
                         children="+7"
+                        fontSize={"xl"}
+                        fontWeight={"bold"}
+                        h="12"
                       />
                       <Input
                         focusBorderColor="#D9F9B6"
                         rounded={"35px"}
                         bg={"#FFFFFF"}
                         size="lg"
+                        h="12"
+                        mt={3}
                         type="text"
                         textAlign={"center"}
                         placeholder="Номер телефона"
