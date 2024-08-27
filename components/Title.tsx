@@ -18,7 +18,7 @@ const Title = () => {
           <HStack justifyContent={"right"}>
             <motion.div>
               <Image
-                className="wave mr-5"
+                className="wave mr-5 overflow-hidden"
                 height={"100"}
                 alt="Контактный кот_1"
                 src={Title_logo}
