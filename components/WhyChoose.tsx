@@ -36,6 +36,14 @@ const Feature: React.FC<FeatureProps> = ({ title, text, IconComponent }) => {
 };
 
 const WhyChoose = () => {
+  // References for headings
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
+
+  // Animations for headings
+  const isTitleInView = useInView(titleRef, { once: true });
+  const isSubtitleInView = useInView(subtitleRef, { once: true });
+
   return (
     <Box position="relative" id="why" textAlign={"center"}>
       {/* SVG background */}
@@ -50,26 +58,43 @@ const WhyChoose = () => {
         <SVGLine2 />
       </Box>
 
-      <Heading
-        fontSize={{
-          base: "5xl",
-          md: "6xl",
-          lg: "8xl",
-        }}
+      {/* Animated Title */}
+      <motion.div
+        ref={titleRef}
+        initial={{ opacity: 0, y: 50 }}
+        animate={isTitleInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.7, ease: "easeOut" }}
       >
-        Преимущества
-      </Heading>
+        <Heading
+          fontSize={{
+            base: "5xl",
+            md: "6xl",
+            lg: "8xl",
+          }}
+        >
+          Преимущества
+        </Heading>
+      </motion.div>
 
-      <Heading
-        lineHeight={"2"}
-        fontSize={{
-          base: "5xl",
-          md: "6xl",
-          lg: "8xl",
-        }}
+      {/* Animated Subtitle */}
+      <motion.div
+        ref={subtitleRef}
+        initial={{ opacity: 0, y: 50 }}
+        animate={isSubtitleInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
       >
-        Kitty House
-      </Heading>
+        <Heading
+          lineHeight={"2"}
+          fontSize={{
+            base: "5xl",
+            md: "6xl",
+            lg: "8xl",
+          }}
+        >
+          Kitty House
+        </Heading>
+      </motion.div>
+
       <Text>
         Our students are chosen to study in our children's school
         <Text> because of the high quality of education</Text>

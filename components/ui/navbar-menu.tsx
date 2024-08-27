@@ -65,7 +65,7 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="flex-wrap gap-2 relative backdrop-blur-sm bg-opacity-90 shadow-xl rounded-full border border-transparent dark:bg-black  bg-gray-50 shadow-input flex justify-center space-x-8 px-4 py-2"
+      className="flex-wrap gap-3 relative backdrop-blur-sm bg-opacity-90 shadow-xl rounded-full border border-transparent dark:bg-black  bg-gray-50 shadow-input flex justify-center space-x-8 px-4 py-2"
     >
       {React.Children.map(children, (child) =>
         React.cloneElement(child as React.ReactElement<any>, { setActive })

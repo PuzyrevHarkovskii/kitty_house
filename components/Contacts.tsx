@@ -65,9 +65,11 @@ const ContactBox: React.FC<ContactBoxProps> = ({
 };
 
 const Contacts = () => {
+  const headingRef = useRef(null);
+  const isInView = useInView(headingRef, { once: true });
+
   return (
     <Box position="relative" overflow="hidden" w="100%" h="100%">
-      {/* Add the SVGLine3 component as a background */}
       <Box
         position="absolute"
         top={0}
@@ -95,27 +97,38 @@ const Contacts = () => {
             }}
           />
 
-          <Box>
-            <Heading
-              lineHeight={"0.5"}
-              fontSize={{
-                base: "5xl",
-                md: "6xl",
-                lg: "8xl",
-              }}
-            >
-              Наши
-            </Heading>
-            <Heading
-              fontSize={{
-                base: "5xl",
-                md: "6xl",
-                lg: "8xl",
-              }}
-            >
-              контакты
-            </Heading>
-          </Box>
+          <motion.div
+            ref={headingRef}
+            initial={{ opacity: 0, y: 50 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+              delay: 0.6, // небольшая задержка перед началом анимации
+            }}
+          >
+            <Box>
+              <Heading
+                lineHeight={"0.5"}
+                fontSize={{
+                  base: "5xl",
+                  md: "6xl",
+                  lg: "8xl",
+                }}
+              >
+                Наши
+              </Heading>
+              <Heading
+                fontSize={{
+                  base: "5xl",
+                  md: "6xl",
+                  lg: "8xl",
+                }}
+              >
+                контакты
+              </Heading>
+            </Box>
+          </motion.div>
 
           <Image
             className="image-container"

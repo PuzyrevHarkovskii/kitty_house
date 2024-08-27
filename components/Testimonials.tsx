@@ -1,16 +1,8 @@
 "use client";
 
-import {
-  Avatar,
-  Box,
-  chakra,
-  Flex,
-  SimpleGrid,
-  useColorModeValue,
-} from "@chakra-ui/react";
-import { motion } from "framer-motion";
-import { useRef } from "react";
-import { useInView } from "framer-motion";
+import { Avatar, Box, chakra, Flex, SimpleGrid } from "@chakra-ui/react";
+import { motion, useInView } from "framer-motion";
+import { useRef, FC } from "react";
 
 // Массив отзывов
 const testimonials = [
@@ -48,6 +40,7 @@ const testimonials = [
   },
 ];
 
+// Интерфейс для свойств карточки отзыва
 interface TestimonialCardProps {
   name: string;
   color: string;
@@ -57,10 +50,14 @@ interface TestimonialCardProps {
 }
 
 // Компонент карточки отзыва
-const TestimonialCard: React.FC<TestimonialCardProps> = (props) => {
-  const { name, color, content, avatar, index } = props;
-
-  const ref = useRef(null);
+const TestimonialCard: FC<TestimonialCardProps> = ({
+  name,
+  color,
+  content,
+  avatar,
+  index,
+}) => {
+  const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true });
 
   return (
@@ -130,8 +127,50 @@ const TestimonialCard: React.FC<TestimonialCardProps> = (props) => {
   );
 };
 
+// Интерфейс для компонента анимации заголовка
+interface AnimatedTextProps {
+  text: string;
+}
+
+// Компонент анимации заголовка
+const AnimatedText: FC<AnimatedTextProps> = ({ text }) => {
+  const ref = useRef<HTMLHeadingElement>(null);
+  const isInView = useInView(ref, { once: true });
+
+  return (
+    <chakra.h1
+      ref={ref}
+      fontSize={{
+        base: "5xl",
+        md: "6xl",
+        lg: "8xl",
+      }}
+      fontWeight={"bold"}
+      color="gray.700"
+      display="flex"
+      justifyContent="center"
+    >
+      {text.split("").map((char, i) => (
+        <motion.span
+          key={i}
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{
+            duration: 0.6,
+            delay: i * 0.05, // Задержка появления каждой буквы
+            type: "spring",
+          }}
+          style={{ display: "inline-block" }} // Для отображения букв на одной линии
+        >
+          {char}
+        </motion.span>
+      ))}
+    </chakra.h1>
+  );
+};
+
 // Основной компонент с отзывами
-export default function Testimonials() {
+const Testimonials: FC = () => {
   return (
     <Flex
       className="testimonials"
@@ -142,17 +181,7 @@ export default function Testimonials() {
       overflow={"hidden"}
     >
       <Box width={{ base: "full", sm: "lg", lg: "xl" }} margin={"auto"}>
-        <chakra.h1
-          fontSize={{
-            base: "5xl",
-            md: "6xl",
-            lg: "8xl",
-          }}
-          fontWeight={"bold"}
-          color="gray.700"
-        >
-          Отзывы
-        </chakra.h1>
+        <AnimatedText text="Отзывы" />
       </Box>
       <SimpleGrid
         columns={{ base: 1, xl: 2 }}
@@ -167,4 +196,6 @@ export default function Testimonials() {
       </SimpleGrid>
     </Flex>
   );
-}
+};
+
+export default Testimonials;

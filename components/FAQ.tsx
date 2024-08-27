@@ -1,6 +1,6 @@
 "use client";
 import { Stack, Box, Heading } from "@chakra-ui/react";
-import React from "react";
+import React, { useRef } from "react";
 import {
   Accordion,
   AccordionItem,
@@ -8,13 +8,8 @@ import {
   AccordionPanel,
   AccordionIcon,
 } from "@chakra-ui/react";
-import { MinusIcon } from "@chakra-ui/icons";
-import { AddIcon } from "@chakra-ui/icons";
-import { motion } from "framer-motion";
-import { useRef } from "react";
-import { useInView } from "framer-motion";
-import SVGLine1 from "./GSAP elements/Lines/SVGLine1";
-import SVGLine2 from "./GSAP elements/Lines/SVGLine2";
+import { MinusIcon, AddIcon } from "@chakra-ui/icons";
+import { motion, useInView } from "framer-motion";
 
 interface ContactBoxProps {
   question: string;
@@ -65,17 +60,55 @@ const FAQItem: React.FC<ContactBoxProps> = ({ question, answer }) => {
   );
 };
 
-const FAQ = () => {
-  const ref = useRef(null);
+interface AnimatedTextProps {
+  text: string;
+}
+
+const AnimatedText: React.FC<AnimatedTextProps> = ({ text }) => {
+  const ref = useRef<HTMLHeadingElement>(null);
+  const isInView = useInView(ref, { once: true }); // Слежение за видимостью элемента
+
+  return (
+    <Heading
+      ref={ref}
+      lineHeight={"1"}
+      fontSize={{
+        base: "5xl",
+        md: "6xl",
+        lg: "8xl",
+      }}
+      as="h1"
+    >
+      {text.split("").map((char, i) => (
+        <motion.span
+          key={i}
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{
+            duration: 0.6,
+            delay: i * 0.05, // Задержка появления каждого символа
+            type: "spring",
+          }}
+          style={{ display: "inline-block" }} // Чтобы каждый символ был на одной строке
+        >
+          {char}
+        </motion.span>
+      ))}
+    </Heading>
+  );
+};
+
+const FAQ: React.FC = () => {
+  const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true });
+
   return (
     <div>
       <motion.div
         ref={ref}
-        // Apply the scale only when the element is in view
         initial={{ scale: 0.6, opacity: 0.3 }}
         animate={isInView ? { scale: 1, opacity: 1 } : {}}
-        transition={{ duration: 0.6 }} // Adjust transition duration as needed
+        transition={{ duration: 0.6 }}
       >
         <Box id="FAQ">
           <Stack
@@ -84,26 +117,8 @@ const FAQ = () => {
             direction={{ base: "column", md: "row" }}
           >
             <Box px={10}>
-              <Heading
-                lineHeight={"0.5"}
-                fontSize={{
-                  base: "5xl",
-                  md: "6xl",
-                  lg: "8xl",
-                }}
-              >
-                Вопрос —
-              </Heading>
-
-              <Heading
-                fontSize={{
-                  base: "5xl",
-                  md: "6xl",
-                  lg: "8xl",
-                }}
-              >
-                Ответ
-              </Heading>
+              <AnimatedText text="Вопрос —" />
+              <AnimatedText text="Ответ" />
             </Box>
 
             <Box
@@ -115,19 +130,19 @@ const FAQ = () => {
             >
               <FAQItem
                 question="How do cats learn in your school?"
-                answer="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+                answer="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..."
               />
               <FAQItem
                 question="How do dogs learn in your school?"
-                answer="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+                answer="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..."
               />
               <FAQItem
                 question="How do mice learn in your school?"
-                answer="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+                answer="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..."
               />
               <FAQItem
-                question="How do mice learn in your school?"
-                answer="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+                question="How do elephants learn in your school?"
+                answer="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..."
               />
             </Box>
           </Stack>
