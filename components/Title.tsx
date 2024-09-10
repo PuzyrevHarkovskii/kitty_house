@@ -15,8 +15,8 @@ const Title = () => {
     <div className="aboutus" style={{ position: "relative", zIndex: 1 }}>
       <HStack justifyContent={"space-evenly"} position="relative" zIndex={2}>
         <Box>
-          <HStack justifyContent={"right"}>
-            <motion.div>
+          <HStack className="overflow-hidden" justifyContent={"right"}>
+            <motion.div className="overflow-hidden">
               <Image
                 className="wave mr-5 overflow-hidden"
                 height={"100"}

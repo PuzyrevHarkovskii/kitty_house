@@ -110,7 +110,7 @@ const FAQ: React.FC = () => {
         animate={isInView ? { scale: 1, opacity: 1 } : {}}
         transition={{ duration: 0.6 }}
       >
-        <Box id="FAQ">
+        <Box id="faq">
           <Stack
             justify={"space-around"}
             spacing={30}

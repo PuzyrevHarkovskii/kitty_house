@@ -7,16 +7,20 @@ import {
   keyframes,
 } from "@chakra-ui/react";
 import React from "react";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const Pricing = () => {
-  const borderAnimation = keyframes`
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 100% 0;
-  }
-`;
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
+
+  // Animations for headings
+  const isTitleInView = useInView(titleRef, { once: true });
+  const isSubtitleInView = useInView(subtitleRef, { once: true });
+
   return (
     <div>
       <Container id="pricing" display={"flex"} justifyContent={"center"}>
@@ -53,16 +57,23 @@ const Pricing = () => {
             alignItems="center"
             height="300px"
           >
-            <Text
-              fontSize={{
-                base: "5xl",
-                md: "6xl",
-                lg: "8xl",
-              }}
-              fontWeight={"bold"}
+            <motion.div
+              ref={titleRef}
+              initial={{ opacity: 0, y: 50 }}
+              animate={isTitleInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, ease: "easeOut" }}
             >
-              500р
-            </Text>
+              <Text
+                fontSize={{
+                  base: "5xl",
+                  md: "6xl",
+                  lg: "8xl",
+                }}
+                fontWeight={"bold"}
+              >
+                500р
+              </Text>
+            </motion.div>
           </Box>
           <Box
             border="5px dashed #cecece"
@@ -75,9 +86,20 @@ const Pricing = () => {
             height="300px"
             // Добавляем анимацию
           >
-            <Text color={"gray.500"} fontSize="2xl">
-              Текст про стоимость
-            </Text>
+            <motion.div
+              ref={titleRef}
+              initial={{ opacity: 0, y: 50 }}
+              animate={isTitleInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
+              <Text color={"gray.500"} padding={10} fontSize="2xl">
+                Стоимость указана за одни сутки. В цену входит полноценный уход
+                за вашей кошкой: кормление, смена лотка, уход за шерстью и
+                когтями, а также ежедневные игровые сеансы и внимание. При
+                оформлении заявки будет рассчитана и указана полная стоимость
+                услуги.
+              </Text>
+            </motion.div>
           </Box>
         </Stack>
       </Container>
