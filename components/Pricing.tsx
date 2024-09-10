@@ -35,13 +35,18 @@ const Pricing = () => {
       <Container maxW="full" display={"flex"} justifyContent={"center"} mt={8}>
         <Stack
           direction={{ base: "column", md: "row" }}
-          spacing={16}
+          spacing={{
+            base: "5",
+            md: "6",
+            lg: "20",
+          }}
           width="100%"
         >
           <Box
-            borderRadius={"35px"}
+            borderRadius={"45px"}
             flex="1"
             bg="#FFBAF3"
+            minH={"100px"}
             color="white"
             display="flex"
             justifyContent="center"
@@ -54,15 +59,16 @@ const Pricing = () => {
                 md: "6xl",
                 lg: "8xl",
               }}
+              fontWeight={"bold"}
             >
               500р
             </Text>
           </Box>
           <Box
             border="5px dashed #cecece"
-            borderRadius="35px"
+            borderRadius="45px"
             flex="2"
-            bg="gray.100"
+            minH={"100px"}
             display="flex"
             justifyContent="center"
             alignItems="center"
