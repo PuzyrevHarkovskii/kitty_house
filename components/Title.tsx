@@ -12,7 +12,10 @@ import HouseLogo from "@/public/images/Лого для Влада2.svg";
 
 const Title = () => {
   return (
-    <div className="aboutus" style={{ position: "relative", zIndex: 1 }}>
+    <div
+      className="aboutus overflow-hidden"
+      style={{ position: "relative", zIndex: 1 }}
+    >
       <HStack justifyContent={"space-evenly"} position="relative" zIndex={2}>
         <Box>
           <HStack className="overflow-hidden" justifyContent={"right"}>
