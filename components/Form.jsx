@@ -343,24 +343,49 @@ const Form = () => {
               </Stack>
             </Box>
           </Stack>
+          <Text fontSize="sm" pb={5} color="gray.600">
+            Нажимая кнопку &quot;Отправить &quot;, вы соглашаетесь с нашей{" "}
+            <Link onClick={onOpen} color="pink.500">
+              политикой конфиденциальности
+            </Link>
+            .
+          </Text>
+
+          <Modal isOpen={isOpen} onClose={onClose}>
+            <ModalOverlay />
+            <ModalContent rounded={"35px"}>
+              <ModalHeader
+                bgColor={"pink"}
+                rounded={"full"}
+                m={"5"}
+                textAlign={"center"}
+              >
+                Политика конфиденциальности
+              </ModalHeader>
+              <ModalCloseButton />
+              <ModalBody>
+                <Box p={5} color="gray.600">
+                  <Heading as="h1" size="lg" mb={4}>
+                    Положение об обработке персональных данных
+                  </Heading>
+                  <Text mb={2}>Текст рыба</Text>
+                </Box>
+              </ModalBody>
+
+              <ModalFooter>
+                <Button
+                  colorScheme="pink"
+                  rounded={"full"}
+                  mr={3}
+                  onClick={onClose}
+                >
+                  Закрыть
+                </Button>
+              </ModalFooter>
+            </ModalContent>
+          </Modal>
         </Box>
       </Box>
-
-      <Modal isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay />
-        <ModalContent rounded={"25px"}>
-          <ModalHeader>Подтверждение</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
-            <Text>Ваша заявка была отправлена!</Text>
-          </ModalBody>
-          <ModalFooter>
-            <Button rounded={"full"} colorScheme="pink" onClick={onClose}>
-              Закрыть
-            </Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
     </motion.div>
   );
 };
