@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import { GridPhotos } from "@/components/Carousel";
 import Testimonials from "@/components/Testimonials";
 import { NavbarDemo } from "@/components/Navbar";
+import Pricing from "@/components/Pricing";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
 
         <WhyChoose />
         <GridPhotos />
+        <Pricing />
         <FAQ />
 
         <Form />

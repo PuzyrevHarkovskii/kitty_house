@@ -143,7 +143,6 @@ const Contacts = () => {
           />
         </HStack>
 
-        {/* Contact Boxes */}
         <Stack
           py={20}
           align={"center"}

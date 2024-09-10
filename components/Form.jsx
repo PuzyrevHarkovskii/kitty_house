@@ -56,14 +56,12 @@ const Form = () => {
       const checkOutDate = new Date(formData.checkOut);
       const timeDifference = checkOutDate - checkInDate;
 
-      // Calculate the number of days, rounding to the nearest whole day
       const daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
 
-      // Ensure the daysDifference is at least 1 (minimum charge for 1 day)
       const validDays = daysDifference > 0 ? daysDifference : 1;
-      setTotalPrice(validDays * 500); // Multiply by 500 rubles
+      setTotalPrice(validDays * 500);
     } else {
-      setTotalPrice(0); // Reset the total price if dates are not valid
+      setTotalPrice(0);
     }
   }, [formData.checkIn, formData.checkOut]);
 
@@ -327,7 +325,6 @@ const Form = () => {
                 </GridItem>
               </SimpleGrid>
               <Stack spacing={3} align={"center"}>
-                {/* Display the total price */}
                 {totalPrice > 0 && (
                   <Text fontSize="2xl" fontWeight="bold">
                     Общая стоимость: {totalPrice} рублей
