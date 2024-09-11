@@ -48,18 +48,7 @@ const Title = () => {
         position="relative"
         display={"flex"}
         wrap={"wrap"}
-      >
-        <Image
-          className="mr-5"
-          height={"100"}
-          alt="Контактный кот_1"
-          src={Third_picture}
-        />
-        <Text maxW={400}>
-          Отель для кошечек в Санкт-Петербурге, метро Купчино. Мы там бла бла
-          бла
-        </Text>
-      </HStack>
+      ></HStack>
     </div>
   );
 };

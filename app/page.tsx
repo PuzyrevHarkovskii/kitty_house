@@ -14,6 +14,7 @@ import { NavbarDemo } from "@/components/Navbar";
 import Pricing from "@/components/Pricing";
 
 //Добавить возраст и имя кошки
+//Отдельно страничка
 
 export default function Home() {
   return (

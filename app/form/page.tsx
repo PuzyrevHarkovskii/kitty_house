@@ -1,7 +1,7 @@
 import React from "react";
 
 const LastForm = () => {
-  return <div>хуй</div>;
+  return <div>Отдельная страничка</div>;
 };
 
 export default LastForm;

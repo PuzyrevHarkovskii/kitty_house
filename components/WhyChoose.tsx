@@ -64,17 +64,7 @@ const WhyChoose = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={isTitleInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.7, ease: "easeOut" }}
-      >
-        <Heading
-          fontSize={{
-            base: "5xl",
-            md: "6xl",
-            lg: "8xl",
-          }}
-        >
-          Преимущества
-        </Heading>
-      </motion.div>
+      ></motion.div>
 
       {/* Animated Subtitle */}
       <motion.div
@@ -91,13 +81,18 @@ const WhyChoose = () => {
             lg: "8xl",
           }}
         >
-          Kitty House
+          Немного о нас
         </Heading>
       </motion.div>
 
       <Text pt={4}>
-        Our students are chosen to study in our children's school
-        <Text> because of the high quality of education</Text>
+        Наш маленький уютный отель мы создавали с огромной любовью к этим
+        созданиям, учитывали их интересы, предпочтения.
+      </Text>
+      <Text>
+        Друзья, мы гарантируем вам, что и ваших любимцев мы окружим заботой и
+        лаской, они постоянно будут под присмотром. Мы всегда будем рядом, им не
+        будет грустно и одиноко!
       </Text>
 
       <Stack
@@ -115,7 +110,7 @@ const WhyChoose = () => {
         <Box mt={{ base: 0, md: 24 }}>
           <Feature
             title="Постоянный уход"
-            text="We believe that learning should contribute to the full development of each child."
+            text="Уборка домиков 2 раза в день. Индивидуальный подход."
             IconComponent={SVGPaw}
           />
         </Box>

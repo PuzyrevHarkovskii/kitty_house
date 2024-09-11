@@ -12,7 +12,6 @@ export function GridPhotos() {
   return (
     <motion.div
       ref={ref}
-      // Apply the scale only when the element is in view
       initial={{ scale: 0.6, opacity: 0.6 }}
       animate={isInView ? { scale: 1, opacity: 1 } : {}}
       transition={{ duration: 0.6 }} // Adjust transition duration as needed
@@ -89,18 +88,18 @@ const cards = [
     id: 2,
     content: <SkeletonTwo />,
     className: "col-span-1",
-    thumbnail: "/images/отель2.jpeg",
+    thumbnail: "/images/8.jpeg",
   },
   {
     id: 3,
     content: <SkeletonThree />,
     className: "col-span-1",
-    thumbnail: "/images/отель3.jpeg",
+    thumbnail: "/images/6.jpeg",
   },
   {
     id: 4,
     content: <SkeletonFour />,
     className: "md:col-span-2",
-    thumbnail: "/images/отель4.jpg",
+    thumbnail: "/images/5.jpeg",
   },
 ];

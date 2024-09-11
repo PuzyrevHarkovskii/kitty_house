@@ -129,20 +129,28 @@ const FAQ: React.FC = () => {
               }}
             >
               <FAQItem
-                question="How do cats learn in your school?"
-                answer="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..."
+                question="Правила заселения"
+                answer="Мы принимаем только клинически здоровых и стерилизованных животных!
+ Важно! Пожалуйста до заселения обработайте Ваше  животное от глистов и блох. Обязательно !!! Прививки от чумы, энтерита, лептоспироза, бешенства, аденовирусной и короновирусной инфекции, гепатита ,вирусного ринотрахеит , кальцивироза, трихофитии , хламидиоза и вакцинировано не менее чем за 2 недели до приезда к нам. В первую очередь это безопасность Вашего животного!"
               />
               <FAQItem
-                question="How do dogs learn in your school?"
-                answer="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..."
+                question="Что понадобится котику в отеле?"
+                answer="любимый питомец *
+корм на все время проживания 
+наполнитель на все время проживания 
+совок для кошачьего туалета
+мисочки для воды и еды
+ПО ЖЕЛАНИЮ:
+плед
+игрушки
+когтеточку
+любимые лакомства
+В целях гигиены и более быстрой и легкой адаптации котика мы рекомендуем принести все необходимые вещи из дома."
               />
               <FAQItem
-                question="How do mice learn in your school?"
-                answer="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..."
-              />
-              <FAQItem
-                question="How do elephants learn in your school?"
-                answer="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..."
+                question="Вы можете сами привезти / забрать котика?"
+                answer="Для Вашего удобства мы предлагаем услугу «Трансфер» — срочную перевозку Вашего питомца из дома в свои личные апартаменты отеля. Это избавит Вас от лишних хлопот и беспокойства, Услуга платная , без сопровождения . Тариф – стоимость такси.
+Строго в переноске предоставляемой хозяином."
               />
             </Box>
           </Stack>
