@@ -109,7 +109,7 @@ const WhyChoose = () => {
       >
         <Feature
           title="Комфортные условия"
-          text="We believe that learning should contribute to the full development of each child."
+          text="Общение с каждым питомцем, любовь и ласка, помогающие пережить разлуку."
           IconComponent={SVGHeart}
         />
         <Box mt={{ base: 0, md: 24 }}>
@@ -121,7 +121,7 @@ const WhyChoose = () => {
         </Box>
         <Feature
           title="Просторные боксы"
-          text="Тут написать про размеры домиков."
+          text="Размеры домика Высота 2.1 м. Ширина: 1.2м. Глубина: 1.2 м."
           IconComponent={SVGBox}
         />
       </Stack>

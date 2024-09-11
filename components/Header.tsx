@@ -19,7 +19,7 @@ export default function Header() {
           <Heading fontSize={"lg"} mb={2}>
             г. Санкт-Петербург
           </Heading>
-          <Heading fontSize={"lg"}>м. Купчино</Heading>
+          <Heading fontSize={"lg"}>м. Звездная</Heading>
         </div>
 
         <Flex

@@ -37,14 +37,10 @@ const Features = () => {
               pt={{ base: 5, md: 10 }}
               pl={{ base: 5, md: 10 }}
             >
-              <Heading fontSize={{ base: "2xl", md: "5xl" }}>Creative</Heading>
-              <Heading
-                fontSize={{ base: "2xl", md: "5xl" }}
-                as={"i"}
-                fontFamily={"Work Sans"}
-              >
-                Writing
+              <Heading fontSize={{ base: "2xl", md: "3xl" }}>
+                Мы находимся рядом с аэропортом. Возможен трансфер.
               </Heading>
+
               <SVGPattern />
             </Box>
           </Box>
@@ -60,13 +56,8 @@ const Features = () => {
               pt={{ base: 5, md: 10 }}
               pl={{ base: 5, md: 10 }}
             >
-              <Heading fontSize={{ base: "2xl", md: "5xl" }}>Creative</Heading>
-              <Heading
-                fontSize={{ base: "2xl", md: "5xl" }}
-                as={"i"}
-                fontFamily={"Work Sans"}
-              >
-                Visual Arts
+              <Heading fontSize={{ base: "2xl", md: "3xl" }}>
+                Котик будет чувствовать себя как дома.
               </Heading>
             </Box>
 
@@ -83,14 +74,10 @@ const Features = () => {
               pt={{ base: 5, md: 10 }}
               pl={{ base: 5, md: 10 }}
             >
-              <Heading fontSize={{ base: "2xl", md: "5xl" }}>Creative</Heading>
-              <Heading
-                fontSize={{ base: "2xl", md: "5xl" }}
-                as={"i"}
-                fontFamily={"Work Sans"}
-              >
-                Writing
+              <Heading fontSize={{ base: "2xl", md: "3xl" }}>
+                Ежедневные фото, видеоотчеты
               </Heading>
+
               <SVGPattern3 />
             </Box>
           </Box>

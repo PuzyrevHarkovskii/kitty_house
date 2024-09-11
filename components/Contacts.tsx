@@ -2,13 +2,15 @@
 import React, { useRef } from "react";
 import { Heading, Text, Box, Stack, HStack, Flex } from "@chakra-ui/react";
 import Image from "next/image";
-import cat_1 from "@/public/images/contactcat_1.png";
-import cat_2 from "@/public/images/contactcat_2.png";
+
 import { IconType } from "react-icons";
 import { AiOutlinePhone } from "react-icons/ai";
 import { FaWhatsapp, FaTelegram } from "react-icons/fa";
 import { motion, useInView } from "framer-motion";
 import SVGLine3 from "./GSAP elements/Lines/SVGLine3";
+
+import cat_1 from "@/public/images/kitty-circle.png";
+import cat_2 from "@/public/images/kitty-circle-2.png";
 
 interface ContactBoxProps {
   color: string;
@@ -77,26 +79,13 @@ const Contacts = () => {
         w="100%"
         h="100%"
         zIndex={0}
-        opacity={0.3} // Adjust the opacity of the SVG background
+        opacity={0.3}
       >
         <SVGLine3 />
       </Box>
 
-      {/* Content Section */}
       <Box id="contacts" textAlign={"center"} position="relative" zIndex={1}>
         <HStack justify={"center"}>
-          <Image
-            className="image-container"
-            height={"75"}
-            alt="Контактный кот_1"
-            src={cat_1}
-            style={{
-              transform: "rotate(-30deg)",
-              marginBottom: "4em",
-              marginRight: "1em",
-            }}
-          />
-
           <motion.div
             ref={headingRef}
             initial={{ opacity: 0, y: 50 }}
@@ -104,7 +93,7 @@ const Contacts = () => {
             transition={{
               duration: 0.6,
               ease: "easeOut",
-              delay: 0.6, // небольшая задержка перед началом анимации
+              delay: 0.6,
             }}
           >
             <Box>
@@ -132,7 +121,7 @@ const Contacts = () => {
 
           <Image
             className="image-container"
-            height={"75"}
+            height={"150"}
             alt="Контактный кот_2"
             src={cat_2}
             style={{

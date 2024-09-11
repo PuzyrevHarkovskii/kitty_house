@@ -13,6 +13,8 @@ import Testimonials from "@/components/Testimonials";
 import { NavbarDemo } from "@/components/Navbar";
 import Pricing from "@/components/Pricing";
 
+//Добавить возраст и имя кошки
+
 export default function Home() {
   return (
     <>

@@ -8,7 +8,7 @@ import Title_logo from "@/public/images/Paw.png";
 import Third_picture from "@/public/images/title_picture.png";
 import SVGLine1 from "./GSAP elements/Lines/SVGLine1";
 
-import HouseLogo from "@/public/images/Лого для Влада2.svg";
+import HouseLogo from "@/public/images/Kitty_House_1_white.png";
 
 const Title = () => {
   return (
@@ -18,36 +18,7 @@ const Title = () => {
     >
       <HStack justifyContent={"space-evenly"} position="relative" zIndex={2}>
         <Box>
-          <HStack className="overflow-hidden" justifyContent={"right"}>
-            <motion.div className="overflow-hidden">
-              <Image
-                className="wave mr-5 overflow-hidden"
-                height={"100"}
-                alt="Контактный кот_1"
-                src={Title_logo}
-              />
-            </motion.div>
-            <Heading
-              lineHeight={"1"}
-              fontSize={{
-                base: "2xl",
-                md: "3xl",
-                lg: "5xl",
-              }}
-            >
-              Отель для кошечек
-            </Heading>
-          </HStack>
-          <Heading
-            lineHeight={"0.8"}
-            fontSize={{
-              base: "6xl",
-              md: "9xl",
-              lg: "10xl",
-            }}
-          >
-            Kitty House
-          </Heading>
+          <HStack className="overflow-hidden" justifyContent={"right"}></HStack>
         </Box>
 
         <Box>
@@ -55,7 +26,7 @@ const Title = () => {
             animate={{ rotate: 360 }}
             transition={{ from: 330, duration: 1 }}
           >
-            <Image height={"500"} alt="Контактный кот_1" src={HouseLogo} />
+            <Image height={"600"} alt="Контактный кот_1" src={HouseLogo} />
           </motion.div>
         </Box>
       </HStack>

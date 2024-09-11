@@ -19,7 +19,7 @@ export default function SVGPattern() {
       }}
     >
       <motion.svg
-        viewBox="-30 -30 600 250"
+        viewBox="-30 -30 500 250"
         style={{ width: "100%", height: "100%" }}
       >
         <motion.path
