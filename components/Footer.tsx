@@ -79,8 +79,6 @@ export default function Footer() {
         justify={{ base: "center", md: "space-between" }}
         align={{ base: "center", md: "center" }}
       >
-        <Image height={22} alt="КиттиХаус" src={KittyHouseNaming} />
-
         <Stack direction={"row"} spacing={6}>
           <Text color={"gray.500"}>© {currentYear} made by app1e.jews ✡</Text>{" "}
         </Stack>

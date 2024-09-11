@@ -23,7 +23,6 @@ export default function Home() {
         <NavbarDemo />
         <Header />
         <Title />
-        <Features />
 
         <WhyChoose />
         <GridPhotos />

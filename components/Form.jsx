@@ -20,6 +20,8 @@ import {
   useDisclosure,
   Modal,
   ModalOverlay,
+  UnorderedList,
+  ListItem,
   ModalContent,
   ModalHeader,
   ModalFooter,
@@ -27,7 +29,8 @@ import {
   ModalCloseButton,
 } from "@chakra-ui/react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import Photo from "@/public/images/formscat.png";
+import Photo from "@/public/images/kitty-circle-2.png";
+import OfferModal from "./SecondModal";
 
 const Form = () => {
   const { hasCopied, onCopy } = useClipboard("example@example.com");
@@ -36,6 +39,7 @@ const Form = () => {
     contact: "",
     checkIn: "",
     checkOut: "",
+    petAge: "",
     petName: "",
   });
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -68,13 +72,14 @@ const Form = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { name, contact, checkIn, checkOut, petName } = formData;
+    const { name, contact, checkIn, checkOut, petName, petAge } = formData;
     const telegramBotId = "7369782390:AAGhdVtZoEp4cYOsECBqwTXCWBTeeAs29Rs";
     const chatId = 702020795;
     const text = `
       Новая заявка!
       Имя: ${name}
       Имя котика: ${petName}
+      Имя котика: ${petAge}
       Дата заезда: ${checkIn}
       Дата выезда: ${checkOut}
       Номер для связи: +7${contact}
@@ -103,9 +108,10 @@ const Form = () => {
         checkIn: "",
         checkOut: "",
         petName: "",
+        petAge: "",
       });
-      setTotalPrice(0); // Reset total price after submission
-      onOpen(); // Open the modal on successful submission
+      setTotalPrice(0);
+      // onOpen();
     } catch (error) {
       console.error("Error:", error);
     }
@@ -119,16 +125,18 @@ const Form = () => {
   const scaleProgress = useTransform(scrollYProgress, [0, 1], [1, 1]);
   const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 
-  // Check if the element is in view, and set `once: true` to trigger the animation only once
   const isInView = useInView(ref, { once: true });
+
+  const onSend = () => {
+    onOpen(); // Открывает модальное окно
+  };
 
   return (
     <motion.div
       ref={ref}
-      // Apply the scale only when the element is in view
       initial={{ scale: 0.6, opacity: 0.3 }}
       animate={isInView ? { scale: 1, opacity: 1 } : {}}
-      transition={{ duration: 0.6 }} // Adjust transition duration as needed
+      transition={{ duration: 0.6 }}
     >
       <Box className="form" id="form">
         <Box
@@ -153,6 +161,10 @@ const Form = () => {
                 src={Photo}
                 minH={50}
                 height={400}
+                style={{
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                }}
               />
             </Box>
             <Box p={10} order={{ base: 1, md: 2 }}>
@@ -163,7 +175,7 @@ const Form = () => {
                   fontWeight={{ base: "bold", md: "extrabold" }}
                   color="gray.900"
                 >
-                  Закажите
+                  Забронировать
                 </chakra.p>
                 <chakra.p
                   fontSize={{ base: "5xl", md: "6xl" }}
@@ -171,7 +183,7 @@ const Form = () => {
                   color="gray.900"
                   lineHeight="shorter"
                 >
-                  звонок
+                  домик
                 </chakra.p>
               </div>
               <SimpleGrid as="form" columns={{ base: 1, lg: 4 }} mb={8}>
@@ -216,6 +228,28 @@ const Form = () => {
                       name="petName"
                       id="petName"
                       value={formData.petName || ""}
+                      onChange={handleChange}
+                    />
+                  </motion.div>
+                  <motion.div
+                    className="box"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.9 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 14 }}
+                  >
+                    <Input
+                      focusBorderColor="#D9F9B6"
+                      rounded={"35px"}
+                      bg={"#FFFFFF"}
+                      size="lg"
+                      type="text"
+                      mb={4}
+                      textAlign={"center"}
+                      placeholder="Возраст котика"
+                      required
+                      name="petAge"
+                      id="petAge"
+                      value={formData.petAge || ""}
                       onChange={handleChange}
                     />
                   </motion.div>
@@ -338,17 +372,18 @@ const Form = () => {
                   color={"white"}
                   bg={"black"}
                 >
-                  Отправить
+                  Забронировать
                 </Button>
               </Stack>
             </Box>
           </Stack>
           <Text fontSize="sm" pb={5} color="gray.600">
-            Нажимая кнопку &quot;Отправить &quot;, вы соглашаетесь с нашей{" "}
+            Нажимая кнопку &quot;Забронировать&quot;, вы соглашаетесь с нашей{" "}
             <Link onClick={onOpen} color="pink.500">
               политикой конфиденциальности
             </Link>
             .
+            <OfferModal />
           </Text>
 
           <Modal isOpen={isOpen} onClose={onClose}>
@@ -365,10 +400,85 @@ const Form = () => {
               <ModalCloseButton />
               <ModalBody>
                 <Box p={5} color="gray.600">
-                  <Heading as="h1" size="lg" mb={4}>
-                    Положение об обработке персональных данных
+                  <Heading size="lg" mb="4" textAlign="center">
+                    Защита данных
                   </Heading>
-                  <Text mb={2}>Текст рыба</Text>
+
+                  <Text mb="4">
+                    Администрация сайта <strong>киттихаус.рф</strong> (далее
+                    Сайт) не может передать или раскрыть информацию,
+                    предоставленную пользователем (далее Пользователь) при
+                    регистрации и использовании функций сайта третьим лицам,
+                    кроме случаев, описанных законодательством страны, на
+                    территории которой пользователь ведет свою деятельность.
+                  </Text>
+
+                  <Heading size="md" mb="2">
+                    Получение персональной информации
+                  </Heading>
+                  <Text mb="4">
+                    Для коммуникации на сайте пользователь обязан внести
+                    некоторую персональную информацию. Для проверки
+                    предоставленных данных, сайт оставляет за собой право
+                    потребовать доказательства идентичности в онлайн или офлайн
+                    режимах.
+                  </Text>
+
+                  <Heading size="md" mb="2">
+                    Использование персональной информации
+                  </Heading>
+                  <Text mb="4">
+                    Сайт использует личную информацию Пользователя для
+                    обслуживания и для улучшения качества предоставляемых услуг.
+                    Часть персональной информации может быть предоставлена банку
+                    или платежной системе, если это обусловлено процедурой
+                    перевода средств. Сайт прилагает все усилия для сбережения
+                    личных данных Пользователя. Личная информация может быть
+                    раскрыта в случаях, описанных законодательством, либо если
+                    это необходимо для соблюдения юридической процедуры. В
+                    других случаях информация не будет раскрыта третьим лицам.
+                  </Text>
+
+                  <Heading size="md" mb="2">
+                    Коммуникация
+                  </Heading>
+                  <Text mb="4">
+                    После регистрации Пользователь получает сообщение,
+                    подтверждающее успешную регистрацию. Пользователь имеет
+                    право в любой момент прекратить получение информационных
+                    бюллетеней, воспользовавшись соответствующим сервисом на
+                    Сайте.
+                  </Text>
+
+                  <Heading size="md" mb="2">
+                    Ссылки
+                  </Heading>
+                  <Text mb="4">
+                    На сайте могут содержаться ссылки на другие сайты. Сайт не
+                    несет ответственности за содержание, качество и политику
+                    безопасности этих сайтов. Данное заявление о
+                    конфиденциальности относится только к информации,
+                    размещенной непосредственно на сайте.
+                  </Text>
+
+                  <Heading size="md" mb="2">
+                    Безопасность
+                  </Heading>
+                  <Text mb="4">
+                    Сайт обеспечивает безопасность учетной записи Пользователя
+                    от несанкционированного доступа.
+                  </Text>
+
+                  <Heading size="md" mb="2">
+                    Уведомления об изменениях
+                  </Heading>
+                  <Text mb="4">
+                    Сайт оставляет за собой право вносить изменения в Политику
+                    конфиденциальности без дополнительных уведомлений.
+                    Нововведения вступают в силу с момента их опубликования.
+                    Пользователи могут отслеживать изменения в Политике
+                    конфиденциальности самостоятельно.
+                  </Text>
                 </Box>
               </ModalBody>
 

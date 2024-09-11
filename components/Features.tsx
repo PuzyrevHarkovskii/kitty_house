@@ -28,7 +28,7 @@ const Features = () => {
           <Box
             className="gradient-box"
             minH={{ base: 50, md: 300 }}
-            bgColor={"#2BD886"}
+            bgColor={"#F0D0CB"}
             borderRadius={"40px"}
             alignSelf="flex-end"
           >
@@ -65,7 +65,7 @@ const Features = () => {
           </Box>
           <Box
             minH={{ base: 100, md: 400 }}
-            bgColor={"#DBF9B8"}
+            bgColor={"#898989"}
             borderRadius={"40px"}
             alignSelf="flex-end"
           >
@@ -77,8 +77,6 @@ const Features = () => {
               <Heading fontSize={{ base: "2xl", md: "3xl" }}>
                 Ежедневные фото, видеоотчеты
               </Heading>
-
-              <SVGPattern3 />
             </Box>
           </Box>
         </Grid>

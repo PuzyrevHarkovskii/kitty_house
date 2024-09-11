@@ -22,12 +22,7 @@ const Title = () => {
         </Box>
 
         <Box>
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ from: 330, duration: 1 }}
-          >
-            <Image height={"600"} alt="Контактный кот_1" src={HouseLogo} />
-          </motion.div>
+          <Image height={"600"} alt="Контактный кот_1" src={HouseLogo} />
         </Box>
       </HStack>
 

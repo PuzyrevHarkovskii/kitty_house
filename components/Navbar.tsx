@@ -18,7 +18,7 @@ function Navbar({ className }: { className?: string }) {
   const menuItems = [
     { to: "aboutus", label: "О нас" },
     { to: "pricing", label: "Стоимость" },
-    { to: "form", label: "Оставить заявку" },
+    { to: "form", label: "Забронировать" },
     { to: "testimonials", label: "Отзывы" },
     { to: "contacts", label: "Контакты" },
   ];
