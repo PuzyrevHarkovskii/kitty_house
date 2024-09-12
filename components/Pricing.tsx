@@ -92,7 +92,11 @@ const Pricing = () => {
               animate={isTitleInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, ease: "easeOut" }}
             >
-              <Text color={"gray.500"} padding={10} fontSize="2xl">
+              <Text
+                color={"gray.500"}
+                padding={10}
+                fontSize={["lg", "lg", "2xl"]}
+              >
                 Стоимость за один день проживания – 500 рублей, Второй кот
                 одного хозяина в один домик +150 рублей. День заезда и день
                 выезда животного оплачиваются в полном объеме, независимо от
