@@ -7,13 +7,15 @@ import SVGLine2 from "./GSAP elements/Lines/SVGLine2";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
+import cat1 from "@/public/images/1c.png";
+
 interface FeatureProps {
   title: string;
   text: string;
-  IconComponent: React.FC;
+  imageUrl: string; // ссылка на изображение
 }
 
-const Feature: React.FC<FeatureProps> = ({ title, text, IconComponent }) => {
+const Feature: React.FC<FeatureProps> = ({ title, text, imageUrl }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -26,7 +28,24 @@ const Feature: React.FC<FeatureProps> = ({ title, text, IconComponent }) => {
     >
       <Flex flexDirection="column" alignItems="center" justifyContent="center">
         <Box display="flex" alignItems="center" justifyContent="center" mb={4}>
-          <IconComponent />
+          <motion.img
+            src={imageUrl}
+            alt={title}
+            style={{
+              width: "80%",
+              height: "auto",
+              maxWidth: "200px",
+              objectFit: "contain",
+            }}
+            animate={{
+              rotate: [-5, 5, -5], // Покачивание из стороны в сторону
+            }}
+            transition={{
+              repeat: Infinity, // Бесконечная анимация
+              duration: 2, // Длительность одного цикла
+              ease: "easeInOut", // Плавные переходы
+            }}
+          />
         </Box>
         <Heading>{title}</Heading>
         <Text maxW={40}>{text}</Text>
@@ -40,13 +59,11 @@ const WhyChoose = () => {
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
 
-  // Animations for headings
   const isTitleInView = useInView(titleRef, { once: true });
   const isSubtitleInView = useInView(subtitleRef, { once: true });
 
   return (
     <Box position="relative" id="why" textAlign={"center"}>
-      {/* SVG background */}
       <Box
         position="absolute"
         top={0}
@@ -85,11 +102,22 @@ const WhyChoose = () => {
         </Heading>
       </motion.div>
 
-      <Text pt={4}>
+      <Text
+        pt={4}
+        lineHeight={{ base: "1.4", md: "1.6" }}
+        fontSize={{ base: "md", md: "lg" }}
+        maxW="600px"
+        mx="auto"
+      >
         Наш маленький уютный отель мы создавали с огромной любовью к этим
         созданиям, учитывали их интересы, предпочтения.
       </Text>
-      <Text>
+      <Text
+        lineHeight={{ base: "1.4", md: "1.6" }}
+        fontSize={{ base: "md", md: "lg" }}
+        maxW="600px"
+        mx="auto"
+      >
         Друзья, мы гарантируем вам, что и ваших любимцев мы окружим заботой и
         лаской, они постоянно будут под присмотром. Мы всегда будем рядом, им не
         будет грустно и одиноко!
@@ -105,19 +133,19 @@ const WhyChoose = () => {
         <Feature
           title="Комфортные условия"
           text="Общение с каждым питомцем, любовь и ласка, помогающие пережить разлуку."
-          IconComponent={SVGHeart}
+          imageUrl="/images/2c.png"
         />
         <Box mt={{ base: 0, md: 24 }}>
           <Feature
             title="Постоянный уход"
             text="Уборка домиков 2 раза в день. Индивидуальный подход."
-            IconComponent={SVGPaw}
+            imageUrl="/images/3c.png"
           />
         </Box>
         <Feature
           title="Просторные боксы"
           text="Размеры домика Высота 2.1 м. Ширина: 1.2м. Глубина: 1.2 м."
-          IconComponent={SVGBox}
+          imageUrl="/images/1c.png"
         />
       </Stack>
     </Box>
