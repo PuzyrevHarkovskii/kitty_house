@@ -59,6 +59,17 @@ const Form = () => {
     }));
   };
 
+  const [isFormValid, setIsFormValid] = useState(false);
+
+  useEffect(() => {
+    const { name, contact, checkIn, checkOut, petName, petAge } = formData;
+    if (name && contact && checkIn && checkOut && petName && petAge) {
+      setIsFormValid(true);
+    } else {
+      setIsFormValid(false);
+    }
+  }, [formData]);
+
   useEffect(() => {
     if (formData.checkIn && formData.checkOut) {
       const checkInDate = new Date(formData.checkIn);
@@ -394,6 +405,7 @@ const Form = () => {
                     rounded={"35px"}
                     color={"white"}
                     bg={"black"}
+                    isDisabled={!isFormValid}
                   >
                     Забронировать
                   </Button>
