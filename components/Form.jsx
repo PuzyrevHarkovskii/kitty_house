@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
-import { MdOutlineArrowOutward } from "react-icons/md";
+
 import {
   Box,
   Button,
@@ -45,6 +45,11 @@ const Form = () => {
   });
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [totalPrice, setTotalPrice] = useState(0); // State to store the total price
+  const {
+    isOpen: isFirstOpen,
+    onOpen: onFirstOpen,
+    onClose: onFirstClose,
+  } = useDisclosure();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -54,7 +59,6 @@ const Form = () => {
     }));
   };
 
-  // Calculate total price based on checkIn and checkOut dates
   useEffect(() => {
     if (formData.checkIn && formData.checkOut) {
       const checkInDate = new Date(formData.checkIn);
@@ -112,7 +116,7 @@ const Form = () => {
         petAge: "",
       });
       setTotalPrice(0);
-      // onOpen();
+      onFirstOpen();
     } catch (error) {
       console.error("Error:", error);
     }
@@ -208,7 +212,7 @@ const Form = () => {
                         size="lg"
                         type="text"
                         textAlign={"center"}
-                        placeholder="Имя"
+                        placeholder="Ваше имя"
                         required
                         name="name"
                         id="name"
@@ -257,7 +261,7 @@ const Form = () => {
                         rounded={"35px"}
                         bg={"#FFFFFF"}
                         size="lg"
-                        type="text"
+                        type="number"
                         mb={4}
                         textAlign={"center"}
                         placeholder="Возраст котика"
@@ -510,6 +514,33 @@ const Form = () => {
                     onClick={onClose}
                   >
                     Закрыть
+                  </Button>
+                </ModalFooter>
+              </ModalContent>
+            </Modal>
+
+            <Modal isOpen={isFirstOpen} onClose={onFirstClose} isCentered>
+              <ModalOverlay />
+              <ModalContent rounded={"25px"} maxW={"400px"}>
+                <ModalBody textAlign={"center"} p={8}>
+                  <ModalHeader
+                    bgColor={"pink.100"}
+                    rounded={"full"}
+                    fontSize={"lg"}
+                    textAlign={"center"}
+                    mb={4}
+                  >
+                    Ваша заявка отправлена!
+                  </ModalHeader>
+                  <p>С вами скоро свяжутся</p>
+                </ModalBody>
+                <ModalFooter justifyContent={"center"}>
+                  <Button
+                    rounded={"full"}
+                    bgColor={"pink.300"}
+                    onClick={onFirstClose}
+                  >
+                    Ок
                   </Button>
                 </ModalFooter>
               </ModalContent>

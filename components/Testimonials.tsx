@@ -4,7 +4,6 @@ import { Avatar, Box, chakra, Flex, SimpleGrid } from "@chakra-ui/react";
 import { motion, useInView } from "framer-motion";
 import { useRef, FC } from "react";
 
-// Массив отзывов
 const testimonials = [
   {
     name: "Елена Н.",

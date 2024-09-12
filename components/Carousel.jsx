@@ -82,24 +82,24 @@ const cards = [
     id: 1,
     content: <SkeletonOne />,
     className: "md:col-span-2",
-    thumbnail: "/images/отель1.jpeg",
+    thumbnail: "/images/GalleryImage1.jpeg",
   },
   {
     id: 2,
     content: <SkeletonTwo />,
     className: "col-span-1",
-    thumbnail: "/images/8.jpeg",
+    thumbnail: "/images/GalleryImage2.jpeg",
   },
   {
     id: 3,
     content: <SkeletonThree />,
     className: "col-span-1",
-    thumbnail: "/images/6.jpeg",
+    thumbnail: "/images/GalleryImage3.jpeg",
   },
   {
     id: 4,
     content: <SkeletonFour />,
     className: "md:col-span-2",
-    thumbnail: "/images/5.jpeg",
+    thumbnail: "/images/GalleryImage4.jpeg",
   },
 ];

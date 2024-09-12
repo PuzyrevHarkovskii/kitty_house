@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Flex, Heading, useColorModeValue } from "@chakra-ui/react";
+import { Box, Flex, Heading } from "@chakra-ui/react";
 
 export default function Header() {
   return (

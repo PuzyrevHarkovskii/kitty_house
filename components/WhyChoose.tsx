@@ -1,18 +1,13 @@
 import { Box, Heading, Stack, Text, Flex } from "@chakra-ui/react";
 import React from "react";
-import SVGPaw from "./GSAP elements/House/SVGPaw";
-import SVGHeart from "./GSAP elements/House/SVGHeart";
-import SVGBox from "./GSAP elements/House/SVGBox";
 import SVGLine2 from "./GSAP elements/Lines/SVGLine2";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-import cat1 from "@/public/images/1c.png";
-
 interface FeatureProps {
   title: string;
   text: string;
-  imageUrl: string; // ссылка на изображение
+  imageUrl: string;
 }
 
 const Feature: React.FC<FeatureProps> = ({ title, text, imageUrl }) => {

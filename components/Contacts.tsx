@@ -9,7 +9,6 @@ import { FaWhatsapp, FaTelegram } from "react-icons/fa";
 import { motion, useInView } from "framer-motion";
 import SVGLine3 from "./GSAP elements/Lines/SVGLine3";
 
-import cat_1 from "@/public/images/kitty-circle.png";
 import cat_2 from "@/public/images/kitty-circle-2.png";
 
 interface ContactBoxProps {

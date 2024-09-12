@@ -1,11 +1,4 @@
-import {
-  Box,
-  Container,
-  Heading,
-  Stack,
-  Text,
-  keyframes,
-} from "@chakra-ui/react";
+import { Box, Container, Heading, Stack, Text } from "@chakra-ui/react";
 import React from "react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";

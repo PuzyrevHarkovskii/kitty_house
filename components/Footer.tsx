@@ -9,10 +9,8 @@ import {
   useColorModeValue,
   VisuallyHidden,
 } from "@chakra-ui/react";
-import Image from "next/image";
-import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+
 import { ReactNode } from "react";
-import KittyHouseNaming from "@/public/images/KittyHouseBuffNaming.png";
 
 const Logo = (props: any) => {
   return (

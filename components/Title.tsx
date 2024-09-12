@@ -1,11 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Heading, Box, Text, HStack } from "@chakra-ui/react";
-import { motion, useAnimation, useInView } from "framer-motion";
 
-import Title_logo from "@/public/images/Paw.png";
-
-import Third_picture from "@/public/images/title_picture.png";
 import SVGLine1 from "./GSAP elements/Lines/SVGLine1";
 
 import HouseLogo from "@/public/images/Kitty_House_1_white.png";
